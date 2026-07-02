@@ -1,0 +1,691 @@
+Command: /home/jmuzy/.espressif/tools/python/v6.0.2/venv/bin/python /home/jmuzy/.espressif/v6.0.2/esp-idf/tools/idf_monitor.py -p socket://localhost:5555 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/jmuzy/Programming/esp/db9/build/db9.elf /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf -m '/home/jmuzy/.espressif/tools/python/v6.0.2/venv/bin/python' '/home/jmuzy/.espressif/v6.0.2/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.9.0 on socket://localhost:5555 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080400: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40080644: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x400d3b3b: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40085ae1 0x40085aa9 0x40085745 0x400d3b3b 0x400d5cc6 0x400d3e52 0x400d36b9 0x400d8665: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf 0x40078000: [Errno 2] No such file or directory: 'xtensa-esp32-elf-addr2line'[0m
+[1;31mxtensa-esp32-elf-addr2line -fiaC -e /home/jmuzy/Programming/esp/db9/build/db9.elf 0x40080400: [Errno 2] No such file or director
