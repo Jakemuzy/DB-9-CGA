@@ -1,9 +1,0 @@
-Command: cmake -G Ninja -B /home/jmuzy/Programming/esp/db9/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/jmuzy/.espressif/tools/python/v6.0.2/venv/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /home/jmuzy/Programming/esp/db9
-Configuration Report               
- ───────────────────────────────── 
-   Parser Version: 1               
-   Verbosity: default              
-   Defaults policy: sdkconfig      
-   Status: Finished successfully   
-                                   
- ───────────────────────────────── 

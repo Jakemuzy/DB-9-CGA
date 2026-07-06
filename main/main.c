@@ -8,25 +8,25 @@
 #include "soc/clk_tree_defs.h"
 
 #include "esp_lcd_panel_rgb.h"
+#include "esp_lcd_panel_ops.h"
 #include "driver/gpio.h"
 
 // Measured in Hz
-// TODO: this is actually a range, account for it 
+// Center of acceptable the range for desired
+#define DESIRED_CLOCK_RATE 14318180
 #define VSYNC_RATE 60
 #define HSYNC_RATE 15750
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 200
 
-#define GROUND_ONE 1
-#define GROUND_TWO 2
-#define RED GPIO_NUM_13
-#define GREEN GPIO_NUM_15
-#define BLUE GPIO_NUM_2
-#define INTENSITY GPI_NUM_12
-// Pin 7 not in use for CGA 
-#define H_SYNC GPIO_NUM_14
-#define V_SYNC GPIO_NUM_4
+#define RED          GPIO_NUM_4
+#define GREEN        GPIO_NUM_5
+#define BLUE         GPIO_NUM_6
+#define INTENSITY    GPIO_NUM_7
+#define H_SYNC       GPIO_NUM_15
+#define V_SYNC       GPIO_NUM_16
+#define PCLK_PIN     GPIO_NUM_17  // Unused, required to be specified
 
 /* 
    FOREWORD:
@@ -41,114 +41,64 @@
 */
 
 
-const uint64_t DESIRED_CLOCK_RATE = SCREEN_WIDTH * SCREEN_HEIGHT * VSYNC_RATE;
-const uint32_t CLOCK_RATE = 0;
 static const char* TAG = "ESP32";
 
 void app_main()
 {
-
 }
 
 void Db9Clock()
 {
-    esp_lcd_i80_bus_handle_t i80_bus = NULL;
-    esp_lcd_i80_bus_config_t bus_cfg = {
-	.clk_src = LCD_CLK_SRC_DEFAULT,
-	.data_gpio_nums = {
-	    RED,
-	    GREEN,
-	    BLUE,
-	    INTENSITY,
-	    H_SYNC,
-	    V_SYNC,
-	    GPIO_NUM_23, // Empty
-	    GPIO_NUM_22, // Empty
-	},
-	.bus_width = 8,
-	.max_transfer_bytes = SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(uint8_t),
-	// Let the chip choose dma_burst_size
-    };
+    // Define a single configuration for the entire RGB panel
+    esp_lcd_rgb_panel_config_t panel_cfg = {
+        .clk_src = LCD_CLK_SRC_DEFAULT,
+        .pclk_gpio_num = PCLK_PIN, 
+        .vsync_gpio_num = V_SYNC,         
+        .hsync_gpio_num = H_SYNC,         
+        .de_gpio_num = -1,                // CGA doesn't use Data Enable 
 
-    ESP_ERROR_CHECK(esp_lcd_new_i80_bus(&bus_cfg, &i80_bus));
+        .data_width = 4,                  
+        .data_gpio_nums = {
+            RED,        
+            GREEN,      
+            BLUE,       
+            INTENSITY   
+        },
 
-    esp_lcd_panel_io_handle_t io_handle = NULL;
-    esp_lcd_panel_io_i80_config_t io_cfg = {
-        .pclk_hz = DESIRED_CLOCK_RATE,
-	.lcd_cmd_bits = 8,	// No clue, best guess
-	.lcd_param_bits = 8,
-	.trans_queue_depth = 10, // 10 seems reasonable, or could do 640 since that would allow us to write a whole scanline
-    };
+	// Porch values straight from IBM hardware documentaiton for CGA, what a weird standard
+        .timings = {
+            .pclk_hz = DESIRED_CLOCK_RATE,
+            .h_res = SCREEN_WIDTH,     
+            .v_res = SCREEN_HEIGHT,    
+	    .hsync_front_porch = 16,
+	    .hsync_pulse_width = 72,
+	    .hsync_back_porch = 180,  
 
-    ESP_ERROR_CHECK(esp_lcd_new_panel_io_i80(i80_bus, &io_cfg, &io_handle));
-
-    //esp_lcd_panel_dev_handle_t = NULL;
-    esp_lcd_panel_dev_config_t panel_cfg = {
-	.bits_per_pixel = 4,
-	.reset_gpio_num = -1,
-	.rgb_ele_order = LCD_RGB_ELEMENT_ORDER_RGB,
-    };
-
-    ESP_ERROR_CHECK(esp_lcd_new_rgb_panel(io_handle, &panel_cfg, &panel_handle);
-}
-
-/*
-void Db9Clock()
-{
-    //i2s_clock_src_t::I2S_CLK_SRC_APLL 
-    // Can only properly pinout using parallel mode
-    static i2s_chan_handle_t
-
-    i2s_chan_config_t tx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
-    ESP_ERROR_CHECK(i2s_new_channel(&tx_chan_cfg, &tx_chan, NULL));
-    i2s_chan_config_t rx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
-    ESP_ERROR_CHECK(i2s_new_channel(&rx_chan_cfg, NULL, &rx_chan));
-
-    i2s_std_config_t tx_std_cfg = {
-        .clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(16000),
-        .slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_STEREO),
-        .gpio_cfg = {
-            .mclk = I2S_GPIO_UNUSED,    
-            .bclk = EXAMPLE_STD_BCLK_IO1,
-            .ws   = EXAMPLE_STD_WS_IO1,
-            .dout = EXAMPLE_STD_DOUT_IO1,
-            .din  = EXAMPLE_STD_DIN_IO1,
-            .invert_flags = {
-                .mclk_inv = false,
-                .bclk_inv = false,
-                .ws_inv   = false,
+	    .vsync_front_porch = 4,
+	    .vsync_pulse_width = 3,
+	    .vsync_back_porch = 55,    
+            .flags = {
+                .hsync_idle_low = 1,   // CGA active high
+                .vsync_idle_low = 1,
             },
         },
-    };
-    ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_chan, &tx_std_cfg));
-
-    #include "driver/i2s.h"
-
-// Define your custom I2S parallel configuration
-    i2s_parallel_config_t cfg = {
-        .gpio_bus = {
-            22, // D0 -> R
-            19, // D1 -> G
-            21, // D2 -> B
-            5,  // D3 -> I
-            18, // D4 -> HSync
-            23, // D5 -> VSync
-            -1, // D6 -> Unused
-            -1  // D7 -> Unused
+        .flags = {
+            .fb_in_psram = false,      
         },
-    .gpio_clk = -1,           // No external pixel clock pin needed for DB-9/CGA
-    .bits = I2S_PARALLEL_BITS_8,
-    .clkspeed_hz = 14318180,  // Target video pixel clock (e.g., 14.318 MHz for NTSC/CGA)
-    .bufa = dma_buffer_a,     // DMA buffer pointers containing pixel + sync data
-    .bufb = dma_buffer_b
     };
 
-    // REMEMBER: hsync and vsync are typically pulled high when writing. When pulled low it tells
-    // the hardware to switch scanlines. Vsync is pulled low when it hits the bottom right of the screen
-    // indicating that a new frame is about to be drawn and to move the ray to the top left of the screen.
-    // Hsync is pulled low when it hits the right of the screen, allowing for hte rays to move to the left
-    // of the screen on the next scanline. We can encode this information via the memory, since each distance
-    // in memory equates to consistent timing. So we would load the entire dma buffer with our image and 
-    // let the parallel i2s send out the data constantly
+    esp_lcd_panel_handle_t panel_handle = NULL;
+
+    ESP_ERROR_CHECK(esp_lcd_new_rgb_panel(&panel_cfg, &panel_handle));
+    ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
+    ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
 }
-*/
+
+
+// REMEMBER: hsync and vsync are typically pulled high when writing. When pulled low it tells
+// the hardware to switch scanlines. Vsync is pulled low when it hits the bottom right of the screen
+// indicating that a new frame is about to be drawn and to move the ray to the top left of the screen.
+// Hsync is pulled low when it hits the right of the screen, allowing for hte rays to move to the left
+// of the screen on the next scanline. We can encode this information via the memory, since each distance
+// in memory equates to consistent timing. So we would load the entire dma buffer with our image and 
+// let the parallel i2s send out the data constantly

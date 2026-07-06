@@ -7,6 +7,9 @@
 /home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/size.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/size-files.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/size-components.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/dfu.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/dfu-list.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/dfu-flash.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/uf2.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/uf2-app.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/CMakeFiles/bootloader_memory_ld_in_preprocess.dir
@@ -33,11 +36,13 @@
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/__idf_esp_hal_gpio.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_gpio/CMakeFiles/rebuild_cache.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/__idf_esp_hal_usb.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_usb/CMakeFiles/rebuild_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/__idf_esp_hal_pmu.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_pmu/CMakeFiles/rebuild_cache.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/__idf_esp_hal_dma.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_dma/CMakeFiles/rebuild_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir
@@ -74,9 +79,6 @@
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_uart/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_uart/CMakeFiles/rebuild_cache.dir
-/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir
-/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/edit_cache.dir
-/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_i2s/CMakeFiles/rebuild_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_ana_conv/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hal_ana_conv/CMakeFiles/rebuild_cache.dir
@@ -107,8 +109,10 @@
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/CMakeFiles/rebuild_cache.dir
-/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/port/esp32/CMakeFiles/edit_cache.dir
-/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/port/esp32/CMakeFiles/rebuild_cache.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/port/esp32s3/CMakeFiles/edit_cache.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/port/esp32s3/CMakeFiles/rebuild_cache.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/mspi_timing_tuning/port/esp32s3/CMakeFiles/edit_cache.dir
+/home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/mspi_timing_tuning/port/esp32s3/CMakeFiles/rebuild_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/lowpower/CMakeFiles/edit_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_hw_support/lowpower/CMakeFiles/rebuild_cache.dir
 /home/jmuzy/Programming/esp/db9/build/bootloader/esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir

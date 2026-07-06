@@ -1,6 +1,0 @@
-Command: /home/jmuzy/.espressif/tools/python/v6.0.2/venv/bin/python /home/jmuzy/.espressif/v6.0.2/esp-idf/tools/idf_monitor.py -p socket://localhost:5555 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/jmuzy/Programming/esp/db9/build/db9.elf /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf -m '/home/jmuzy/.espressif/tools/python/v6.0.2/venv/bin/python' '/home/jmuzy/.espressif/v6.0.2/esp-idf/tools/idf.py'
-[0;33m--- esp-idf-monitor 1.9.0 on socket://localhost:5555 115200[0m
-[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
-[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/jmuzy/.espressif/v6.0.2/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2259[0m
-[0m--- 0x40080644: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/jmuzy/.espressif/v6.0.2/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
-[0m
