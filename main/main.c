@@ -16,6 +16,8 @@
 #include "esp_lcd_panel_ops.h"
 #include "driver/gpio.h"
 
+#include "display.h"
+
 // Measured in Hz
 // Center of acceptable the range for desired
 #define DESIRED_CLOCK_RATE 14318180
@@ -128,6 +130,32 @@ void app_main()
     cga_frame_buffer = custom_canvas;
     memset(cga_frame_buffer, 0x00, SCREEN_WIDTH * SCREEN_HEIGHT);
 
+    buffer_info *info = malloc(sizeof(buffer_info));
+    info->fb = cga_frame_buffer;
+    info->screen_width = SCREEN_WIDTH;
+    info->screen_height = SCREEN_HEIGHT;
+
+    bitmap_display *letter_A = malloc(sizeof(bitmap_display));
+    letter_A->width = 20;
+    letter_A->height = 20; 
+    letter_A->bitmap = BITMAP_A;
+
+    buffer_draw_char(info, letter_A, 30, 30, 0xF0);
+
+    // Temporary for dumping circle data
+    FILE *fptr = fopen("output.txt", "wb");
+    char size_header[10];
+    
+    snprintf(size_header, 10, "%d, %d\n", SCREEN_WIDTH, SCREEN_HEIGHT);
+    fprintf(fptr, "%s", size_header);
+    fwrite(cga_frame_buffer, 
+	sizeof(custom_canvas[0]), 
+	sizeof(custom_canvas) / sizeof(custom_canvas[0]), 
+	fptr
+    );
+    fclose(fptr);
+
+    /*
     uint16_t radius = SCREEN_WIDTH / 4;
     uint16_t center_x = SCREEN_WIDTH / 2,
 	     center_y = SCREEN_HEIGHT / 2;
@@ -163,6 +191,7 @@ void app_main()
         }
         ESP_LOGI(TAG, "Finished drawing circle.");
 
+
 	#if DEBUG
 
 		// Temporary for dumping circle data
@@ -182,6 +211,7 @@ void app_main()
 
 	vTaskDelay(pdMS_TO_TICKS(3000));
     }
+    */
 }
 
 
