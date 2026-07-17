@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf
+file /home/jmuzy/Programming/ESP/DB-9-CGA/build/bootloader/bootloader.elf

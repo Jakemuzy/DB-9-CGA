@@ -135,6 +135,7 @@ void app_main()
     info->screen_width = SCREEN_WIDTH;
     info->screen_height = SCREEN_HEIGHT;
 
+    /*
     bitmap_display *letter_A = malloc(sizeof(bitmap_display));
     letter_A->width = 20;
     letter_A->height = 20; 
@@ -154,8 +155,8 @@ void app_main()
 	fptr
     );
     fclose(fptr);
+    */
 
-    /*
     uint16_t radius = SCREEN_WIDTH / 4;
     uint16_t center_x = SCREEN_WIDTH / 2,
 	     center_y = SCREEN_HEIGHT / 2;
@@ -181,21 +182,32 @@ void app_main()
 	        // Color perimeter only
 	        unsigned int color = 0x00;
 	        if (dist_to_center >= inner_radius_sq && 
-		    dist_to_center <= outer_radius_sq ){
-		    color = 0x0F & color_multiplier;
+                dist_to_center <= outer_radius_sq ){
+                color = 0x0F & color_multiplier;
 	        }
 
 	        int idx = y * SCREEN_WIDTH + x;
-	        cga_frame_buffer[idx] = color;
+                cga_frame_buffer[idx] = color;
     	    }
         }
         ESP_LOGI(TAG, "Finished drawing circle.");
 
+        printf("---START_FRAME---\n");
+        for (int y = 0; y < SCREEN_HEIGHT; y++) {
+            for (int x = 0; x < SCREEN_WIDTH; x++) {
+                printf("%02X", cga_frame_buffer[y * SCREEN_WIDTH + x] & 0xFF);
+            }
+            printf("\n");
+        }
+        printf("---END_FRAME---\n");
+
+
 
 	#if DEBUG
-
-		// Temporary for dumping circle data
 		FILE *fptr = fopen("output.txt", "wb");
+        if (!fptr) {
+            ESP_LOGE(TAG, "ERROR opening output.txt");
+        }
 		char size_header[10];
 
 		snprintf(size_header, 10, "%d, %d\n", SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -206,12 +218,10 @@ void app_main()
 			fptr
 		);
 		fclose(fptr);
-
 	#endif
 
 	vTaskDelay(pdMS_TO_TICKS(3000));
     }
-    */
 }
 
 

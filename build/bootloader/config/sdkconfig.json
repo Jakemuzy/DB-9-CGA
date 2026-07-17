@@ -694,7 +694,6 @@
     "SOC_ULP_FSM_SUPPORTED": true,
     "SOC_ULP_HAS_ADC": true,
     "SOC_ULP_SUPPORTED": true,
-    "SOC_USB_FSLS_PHY_NUM": 1,
     "SOC_USB_OTG_PERIPH_NUM": 1,
     "SOC_USB_OTG_SUPPORTED": true,
     "SOC_USB_SERIAL_JTAG_SUPPORTED": true,

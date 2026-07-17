@@ -1,6 +1,6 @@
 #
 # Automatically generated file. DO NOT EDIT.
-# Espressif IoT Development Framework (ESP-IDF) 6.0.2 Project Configuration
+# Espressif IoT Development Framework (ESP-IDF) 6.0.1 Project Configuration
 #
 # default:
 CONFIG_SOC_ADC_SUPPORTED=y
@@ -428,8 +428,6 @@ CONFIG_SOC_UART_WAKEUP_SUPPORT_ACTIVE_THRESH_MODE=y
 CONFIG_SOC_UHCI_NUM=1
 # default:
 CONFIG_SOC_USB_OTG_PERIPH_NUM=1
-# default:
-CONFIG_SOC_USB_FSLS_PHY_NUM=1
 # default:
 CONFIG_SOC_SHA_DMA_MAX_BUFFER_SIZE=3968
 # default:
@@ -1987,6 +1985,8 @@ CONFIG_MBEDTLS_TLS_SERVER_AND_CLIENT=y
 # default:
 # CONFIG_MBEDTLS_TLS_CLIENT_ONLY is not set
 # default:
+# CONFIG_MBEDTLS_TLS_DISABLED is not set
+# default:
 # CONFIG_MBEDTLS_SSL_KEEP_PEER_CERTIFICATE is not set
 # default:
 # CONFIG_MBEDTLS_SSL_CONTEXT_SERIALIZATION is not set
@@ -2071,6 +2071,8 @@ CONFIG_MBEDTLS_CMAC_C=y
 #
 # Asymmetric Ciphers
 #
+# default:
+CONFIG_MBEDTLS_BIGNUM_C=y
 # default:
 CONFIG_MBEDTLS_RSA_C=y
 # default:
