@@ -2,4 +2,5 @@
 -fno-builtin-memcpy
 -fno-builtin-memset
 -fno-builtin-bzero
+-mdisable-hardware-atomics
 "-specs=/home/jmuzy/Programming/ESP/DB-9-CGA/build/specs/picolibc.specs"

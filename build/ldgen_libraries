@@ -35,6 +35,7 @@
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_hal_uart/libesp_hal_uart.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_driver_dma/libesp_driver_dma.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_mm/libesp_mm.a
+/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_psram/libesp_psram.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/mbedtls/mbedtls/library/libmbedtls.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/mbedtls/mbedtls/library/libmbedx509.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a
@@ -96,7 +97,6 @@
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_ringbuf/libesp_ringbuf.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_psram/libesp_psram.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_driver_spi/libesp_driver_spi.a
-/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_psram/libesp_psram.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_hal_lcd/libesp_hal_lcd.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_driver_i2s/libesp_driver_i2s.a
 /home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_lcd/libesp_lcd.a

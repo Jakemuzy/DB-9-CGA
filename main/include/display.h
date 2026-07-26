@@ -3,7 +3,11 @@
 
 #include <stdint.h>
 
+#include "esp_lcd_panel_rgb.h"
+#include "esp_lcd_panel_ops.h"
+
 #include "letters.h"
+#include "colors.h"
 
 /* 
    NOTES: 
@@ -18,19 +22,28 @@
 
 #define MARGIN_BETWEEN_ELEMENTS 5
 #define BORDER_PADDING 5
+#define ASPECT_RATIO 0.4f
+    // This honestly looks better than the mathematically correct formula
 
-typedef struct buffer_info {
-    uint8_t *fb;
+typedef struct BufferInfo {
+	esp_lcd_panel_handle_t handle;
+
+    uint16_t *fb1, *fb2;
+	uint16_t *draw_buf; 
+		// This is which fb is being drawn to at any given point
+
     uint16_t screen_width;
     uint16_t screen_height;
-} buffer_info;
+} BufferInfo;
 
 
 /* ----- functions ----- */
 
-void update_buffer(uint8_t *fb);
+void update_buffer(BufferInfo *buf);
+void swap_buffers(BufferInfo *buf);
 
-void buffer_draw_borders(buffer_info *info);
-void buffer_draw_char(buffer_info *info, bitmap_display* character , uint16_t posx, uint16_t posy, unsigned int color);
+void buffer_draw_borders(BufferInfo *info);
+void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t radius, Color color, Brightness brightness);
+void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness); // Centered on (posx, posy)
 
 #endif

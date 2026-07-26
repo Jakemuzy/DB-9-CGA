@@ -74,6 +74,8 @@
 		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_ringbuf/cmake_install.cmake",
 		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_driver_i2c/cmake_install.cmake",
 		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_psram/cmake_install.cmake",
+		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_psram/device/cmake_install.cmake",
+		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_psram/xip_impl/cmake_install.cmake",
 		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_driver_spi/cmake_install.cmake",
 		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_hal_parlio/cmake_install.cmake",
 		"/home/jmuzy/Programming/ESP/DB-9-CGA/build/esp-idf/esp_driver_bitscrambler/cmake_install.cmake",

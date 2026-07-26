@@ -10,6 +10,7 @@
 #include "esp_log.h"
 #include "esp_sleep.h"
 #include "esp_timer.h"
+#include "esp_heap_caps.h"
 #include "soc/clk_tree_defs.h"
 
 #include "esp_lcd_panel_rgb.h"
@@ -27,12 +28,12 @@
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 200
 
-#define RED          GPIO_NUM_4
-#define GREEN        GPIO_NUM_5
-#define BLUE         GPIO_NUM_6
-#define INTENSITY    GPIO_NUM_7
-#define H_SYNC       GPIO_NUM_15
-#define V_SYNC       GPIO_NUM_16
+#define RED          GPIO_NUM_42
+#define GREEN        GPIO_NUM_41
+#define BLUE         GPIO_NUM_40
+#define INTENSITY    GPIO_NUM_39
+#define H_SYNC       GPIO_NUM_14
+#define V_SYNC       GPIO_NUM_13
 
 // Unused pins, required to be specified
 #define PCLK_PIN     GPIO_NUM_17  
@@ -40,6 +41,14 @@
 #define DUMMY_B      GPIO_NUM_10
 #define DUMMY_C      GPIO_NUM_11
 #define DUMMY_D      GPIO_NUM_12
+#define DUMMY_E      GPIO_NUM_5
+#define DUMMY_F      GPIO_NUM_2
+#define DUMMY_G      GPIO_NUM_15
+#define DUMMY_H      GPIO_NUM_16
+#define DUMMY_I      GPIO_NUM_6
+#define DUMMY_J      GPIO_NUM_21
+#define DUMMY_K      GPIO_NUM_3
+#define DUMMY_L      GPIO_NUM_4
 
 /* 
    FOREWORD:
@@ -56,8 +65,7 @@
 
 static const char* TAG = "ESP32";
 
-uint8_t custom_canvas[SCREEN_WIDTH * SCREEN_HEIGHT];
-uint8_t *cga_frame_buffer = NULL;
+void *fb1 = NULL, *fb2 = NULL;
 esp_lcd_panel_handle_t panel_handle = NULL;
 
 void Db9Clock()
@@ -69,46 +77,51 @@ void Db9Clock()
         .vsync_gpio_num = V_SYNC,         
         .hsync_gpio_num = H_SYNC,         
         .de_gpio_num = -1,                // CGA doesn't use Data Enable 
+        .bounce_buffer_size_px = 10 * SCREEN_WIDTH,
 
-        .data_width = 8,                 
-	.in_color_format = LCD_COLOR_FMT_RGB888,
+        .data_width = 16,                 
+        .in_color_format = LCD_COLOR_FMT_RGB565,
         .data_gpio_nums = {
             RED,        
             GREEN,      
             BLUE,       
             INTENSITY,
-	    // Unused dummies since requires 8 bit width
-	    DUMMY_A, 
-	    DUMMY_B, 
-	    DUMMY_C,
-	    DUMMY_D
+	    // Unused dummies since requires 16 bit width
+            DUMMY_A, 
+            DUMMY_B, 
+            DUMMY_C,
+            DUMMY_D,
+            DUMMY_E,
+            DUMMY_F,
+            DUMMY_G,
+            DUMMY_H,
+            DUMMY_I,
+            DUMMY_J,
+            DUMMY_K,
+            DUMMY_L
         },
 
-	.user_fbs = {
-	    custom_canvas
-	},
-
-
-	// Porch values straight from IBM hardware documentaiton for CGA, what a weird standard
+        // Porch values straight from IBM hardware documentaiton for CGA, what a weird standard
         .timings = {
             .pclk_hz = DESIRED_CLOCK_RATE,
             .h_res = SCREEN_WIDTH,     
             .v_res = SCREEN_HEIGHT,    
-	    .hsync_front_porch = 16,
-	    .hsync_pulse_width = 72,
-	    .hsync_back_porch = 180,  
+            .hsync_front_porch = 16,
+            .hsync_pulse_width = 42,
+            .hsync_back_porch = 160,  
 
-	    .vsync_front_porch = 4,
-	    .vsync_pulse_width = 3,
-	    .vsync_back_porch = 55,    
+            .vsync_front_porch = 27,
+            .vsync_pulse_width = 3,
+            .vsync_back_porch = 32,    
             .flags = {
                 .hsync_idle_low = 1,   // CGA active high
                 .vsync_idle_low = 1,
             },
         },
         .flags = {
-            .fb_in_psram = false,      
-	    .disp_active_low = 1,
+            .fb_in_psram = true,      
+	        .disp_active_low = 1,
+            .double_fb = 1
         },
     };
 
@@ -123,17 +136,19 @@ void app_main()
     Db9Clock();
     ESP_LOGI(TAG, "Finished initializing RGB panel.");
 
-    ESP_LOGI(TAG, "Drawing circle...");
-    void *fb_pointer = NULL;
-    ESP_ERROR_CHECK(esp_lcd_rgb_panel_get_frame_buffer(panel_handle, 1, &fb_pointer));
+    ESP_LOGI(TAG, "Clearing Screen...");
+    ESP_ERROR_CHECK(esp_lcd_rgb_panel_get_frame_buffer(panel_handle, 2, &fb1, &fb2));
 
-    cga_frame_buffer = custom_canvas;
-    memset(cga_frame_buffer, 0x00, SCREEN_WIDTH * SCREEN_HEIGHT);
 
-    buffer_info *info = malloc(sizeof(buffer_info));
-    info->fb = cga_frame_buffer;
+    ESP_LOGI(TAG, "Drawing...");
+    BufferInfo *info = malloc(sizeof(BufferInfo));
     info->screen_width = SCREEN_WIDTH;
     info->screen_height = SCREEN_HEIGHT;
+    info->handle = panel_handle;
+    info->fb1 = fb1;
+    info->fb2 = fb2;
+    info->draw_buf = fb1;
+
 
     /*
     bitmap_display *letter_A = malloc(sizeof(bitmap_display));
@@ -142,86 +157,62 @@ void app_main()
     letter_A->bitmap = BITMAP_A;
 
     buffer_draw_char(info, letter_A, 30, 30, 0xF0);
-
-    // Temporary for dumping circle data
-    FILE *fptr = fopen("output.txt", "wb");
-    char size_header[10];
-    
-    snprintf(size_header, 10, "%d, %d\n", SCREEN_WIDTH, SCREEN_HEIGHT);
-    fprintf(fptr, "%s", size_header);
-    fwrite(cga_frame_buffer, 
-	sizeof(custom_canvas[0]), 
-	sizeof(custom_canvas) / sizeof(custom_canvas[0]), 
-	fptr
-    );
-    fclose(fptr);
     */
+    Color color = DB9_RED;
+    while (1) {
+        buffer_draw_circle(
+            info,
+            (uint16_t)(SCREEN_WIDTH / 2),
+            (uint16_t)(SCREEN_HEIGHT /2),
+            (uint16_t)(SCREEN_WIDTH / 8),
+            color,
+            DB9_DARK
+        );
 
-    uint16_t radius = SCREEN_WIDTH / 4;
+        swap_buffers(info);
+
+        ESP_LOGI(TAG, "Finished drawing circle.");
+	    vTaskDelay(pdMS_TO_TICKS(300));
+    }
+
+
+    /*
+    float aspect_ratio = 0.4f;
+    uint16_t radius = SCREEN_WIDTH / 8;
     uint16_t center_x = SCREEN_WIDTH / 2,
-	     center_y = SCREEN_HEIGHT / 2;
+	         center_y = SCREEN_HEIGHT / 2;
 
     float inner_radius_sq = (radius - 3) * (radius - 3),
           outer_radius_sq = (radius + 3) * (radius + 3);
 
+    uint16_t* draw_buf = (uint16_t*)fb1;
+
     while (1) {
-
-        int64_t ms = esp_timer_get_time() / 1000;
-
-        for (int y = 0; y < SCREEN_HEIGHT; y++) {
-	    for (int x = 0; x < SCREEN_WIDTH; x++) {
-
-	        float dist_to_center = 
-		        (x - center_x) * (x - center_x) +
-		        (y - center_y) * (y - center_y);
-
-	        float angle = (float)ms * 0.003f;
-	        float normalized_sin = (sin(angle) + 1.0f) / 2.0f;
-	        unsigned int color_multiplier = (unsigned int)(normalized_sin * 15.0f);
-
-	        // Color perimeter only
-	        unsigned int color = 0x00;
-	        if (dist_to_center >= inner_radius_sq && 
-                dist_to_center <= outer_radius_sq ){
-                color = 0x0F & color_multiplier;
-	        }
-
-	        int idx = y * SCREEN_WIDTH + x;
-                cga_frame_buffer[idx] = color;
-    	    }
-        }
-        ESP_LOGI(TAG, "Finished drawing circle.");
-
-        printf("---START_FRAME---\n");
         for (int y = 0; y < SCREEN_HEIGHT; y++) {
             for (int x = 0; x < SCREEN_WIDTH; x++) {
-                printf("%02X", cga_frame_buffer[y * SCREEN_WIDTH + x] & 0xFF);
-            }
-            printf("\n");
+
+                float dist_to_center = 
+                    ((x * aspect_ratio) - (center_x * aspect_ratio)) * ((x * aspect_ratio) - (center_x * aspect_ratio)) +
+                    (y - center_y) * (y - center_y);
+
+                // Color perimeter only
+                unsigned int color = 0x00;
+                if (dist_to_center >= inner_radius_sq && 
+                    dist_to_center <= outer_radius_sq ){
+                    color = 0x09;
+                }
+
+                int idx = y * SCREEN_WIDTH + x;
+                draw_buf[idx] = color;
+    	    }
         }
-        printf("---END_FRAME---\n");
 
+        // Swap buffers
+        esp_lcd_panel_draw_bitmap(panel_handle, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, draw_buf);
+        draw_buf = (draw_buf == (uint16_t*)fb1) ? (uint16_t*)fb2 : (uint16_t*)fb1;
 
-
-	#if DEBUG
-		FILE *fptr = fopen("output.txt", "wb");
-        if (!fptr) {
-            ESP_LOGE(TAG, "ERROR opening output.txt");
-        }
-		char size_header[10];
-
-		snprintf(size_header, 10, "%d, %d\n", SCREEN_WIDTH, SCREEN_HEIGHT);
-		fprintf(fptr, "%s", size_header);
-		fwrite(cga_frame_buffer, 
-			sizeof(custom_canvas[0]), 
-			sizeof(custom_canvas) / sizeof(custom_canvas[0]), 
-			fptr
-		);
-		fclose(fptr);
-	#endif
-
-	vTaskDelay(pdMS_TO_TICKS(3000));
     }
+    */
 }
 
 

@@ -35,6 +35,7 @@ $<TARGET_FILE:__idf_esp_driver_gpio>
 $<TARGET_FILE:__idf_esp_hal_uart>
 $<TARGET_FILE:__idf_esp_driver_dma>
 $<TARGET_FILE:__idf_esp_mm>
+$<TARGET_FILE:__idf_esp_psram>
 $<TARGET_FILE:mbedtls>
 $<TARGET_FILE:mbedx509>
 $<TARGET_FILE:tfpsacrypto>
@@ -96,7 +97,6 @@ $<TARGET_FILE:__idf_esp_hal_i2c>
 $<TARGET_FILE:__idf_esp_ringbuf>
 $<TARGET_FILE:idf::esp_psram>
 $<TARGET_FILE:idf::esp_driver_spi>
-$<TARGET_FILE:__idf_esp_psram>
 $<TARGET_FILE:idf::esp_hal_lcd>
 $<TARGET_FILE:idf::esp_driver_i2s>
 $<TARGET_FILE:idf::esp_lcd>
