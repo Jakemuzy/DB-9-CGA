@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/jmuzy/Programming/esp/db9/build/bootloader/bootloader.elf
+    add-symbol-file /home/jmuzy/Programming/ESP/DB-9-CGA/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/jmuzy/Programming/esp/db9/build/db9.elf
+file /home/jmuzy/Programming/ESP/DB-9-CGA/build/db9.elf
