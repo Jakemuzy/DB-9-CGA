@@ -10,7 +10,6 @@
 #include "esp_log.h"
 #include "esp_sleep.h"
 #include "esp_timer.h"
-#include "esp_heap_caps.h"
 #include "soc/clk_tree_defs.h"
 
 #include "esp_lcd_panel_rgb.h"

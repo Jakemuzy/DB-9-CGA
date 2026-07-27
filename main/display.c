@@ -89,5 +89,9 @@ void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx
 	    idx_y++;
 	}
 
+    /*
+     So the real question is since this function isn't very cachce locality friendly there must be a lot of page misses (debateable since the screen is only 640x200 which can almost be fit into esp32-s3s rom if not for the fact that each pixel uses uint16_t). But anyways the real question is since the locality isn't the best and the esp32-s3 must supply consistent vsync and hsync pulses to keep the display driven on a crt wouldn't this function slow that down a lot? Especially if many characters need to be written?
+    */
+
 }
 
