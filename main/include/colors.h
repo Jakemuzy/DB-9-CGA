@@ -1,6 +1,13 @@
 #ifndef DB9_COLORS_H_
 #define DB9_COLORS_H_
 
+/*
+     Simple file for enum color representations
+     including intensity modifiers.
+
+     ie. DB9_RED | DB9_LIGHT = light red
+*/
+
 typedef uint8_t Color;
 typedef uint8_t Brightness;
 

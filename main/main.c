@@ -172,47 +172,9 @@ void app_main()
         swap_buffers(info);
 
         ESP_LOGI(TAG, "Finished drawing circle.");
-	    vTaskDelay(pdMS_TO_TICKS(300));
+	vTaskDelay(pdMS_TO_TICKS(300));
     }
 
-
-    /*
-    float aspect_ratio = 0.4f;
-    uint16_t radius = SCREEN_WIDTH / 8;
-    uint16_t center_x = SCREEN_WIDTH / 2,
-	         center_y = SCREEN_HEIGHT / 2;
-
-    float inner_radius_sq = (radius - 3) * (radius - 3),
-          outer_radius_sq = (radius + 3) * (radius + 3);
-
-    uint16_t* draw_buf = (uint16_t*)fb1;
-
-    while (1) {
-        for (int y = 0; y < SCREEN_HEIGHT; y++) {
-            for (int x = 0; x < SCREEN_WIDTH; x++) {
-
-                float dist_to_center = 
-                    ((x * aspect_ratio) - (center_x * aspect_ratio)) * ((x * aspect_ratio) - (center_x * aspect_ratio)) +
-                    (y - center_y) * (y - center_y);
-
-                // Color perimeter only
-                unsigned int color = 0x00;
-                if (dist_to_center >= inner_radius_sq && 
-                    dist_to_center <= outer_radius_sq ){
-                    color = 0x09;
-                }
-
-                int idx = y * SCREEN_WIDTH + x;
-                draw_buf[idx] = color;
-    	    }
-        }
-
-        // Swap buffers
-        esp_lcd_panel_draw_bitmap(panel_handle, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, draw_buf);
-        draw_buf = (draw_buf == (uint16_t*)fb1) ? (uint16_t*)fb2 : (uint16_t*)fb1;
-
-    }
-    */
 }
 
 

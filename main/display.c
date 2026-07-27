@@ -52,17 +52,42 @@ void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t
 
 void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
 {
-/*
-	for (int y = posy; y < y + character->height; y++)
-	{
-	    for (int x = posx; x < x + character->width; x++)
-	    {
+	// Position is top left, draws from top left to bottom right
+	
+	uint16_t char_width_pixels = scale * DEFAULT_CHAR_WIDTH_PIXELS;
+	uint16_t char_height_pixels = scale * DEFAULT_CHAR_HEIGHT_PIXELS;
 
-		// ONLY display if it intersectiosn with bitmap_display
-	        unsigned int pos = (y * info->screen_width) + x;
-		info->fb[pos] = color;
+	// Index of the bitmap (for sampling)
+	uint16_t idx_x = 0, idx_y = 0;
+
+	for (uint16_t y = posy; y < posy + char_height_pixels; y++)
+	{
+	    if (y > info->screen_height)
+	        break;
+
+	    for (uint16_t x = posx; x < posx + char_width_pixels; x++)
+	    {
+ 		if (x > info->screen_width)
+		    break;	
+
+		uint8_t mapped_x = idx_x / scale;
+		uint8_t mapped_y = idx_y / scale;
+
+		// Shift is backwards cuz old fonts were written backwards
+	        bool activated = (character[mapped_y] & (1 >> mapped_x)) != 0; 
+		
+		if (activated)
+		{
+		    int idx = y * info->screen_width + x;
+		    info->draw_buf[idx] = color | brightness;
+		}
+
+		idx_x++;
 	    }
+
+	    idx_x = 0;
+	    idx_y++;
 	}
-*/
+
 }
 

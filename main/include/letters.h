@@ -6,81 +6,85 @@
 /*
      Simple file for const bitmap representations
     of alphanumeric variables for buffer rendering.
+
+    Font: Signetics 2513
 */
 
-typedef struct bitmap_display {
-    uint16_t width;
-    uint16_t height; 
-    const uint8_t *bitmap;
-} bitmap_display;
+#define DEFAULT_CHAR_WIDTH_PIXELS 8
+#define DEFAULT_CHAR_HEIGHT_PIXELS 8
 
-// Uppercase Letters
-extern const uint8_t BITMAP_A[];
-extern const uint8_t BITMAP_B[];
-extern const uint8_t BITMAP_C[];
-extern const uint8_t BITMAP_D[];
-extern const uint8_t BITMAP_E[];
-extern const uint8_t BITMAP_F[];
-extern const uint8_t BITMAP_G[];
-extern const uint8_t BITMAP_H[];
-extern const uint8_t BITMAP_I[];
-extern const uint8_t BITMAP_J[];
-extern const uint8_t BITMAP_K[];
-extern const uint8_t BITMAP_L[];
-extern const uint8_t BITMAP_M[];
-extern const uint8_t BITMAP_N[];
-extern const uint8_t BITMAP_O[];
-extern const uint8_t BITMAP_P[];
-extern const uint8_t BITMAP_Q[];
-extern const uint8_t BITMAP_R[];
-extern const uint8_t BITMAP_S[];
-extern const uint8_t BITMAP_T[];
-extern const uint8_t BITMAP_U[];
-extern const uint8_t BITMAP_V[];
-extern const uint8_t BITMAP_W[];
-extern const uint8_t BITMAP_X[];
-extern const uint8_t BITMAP_Y[];
-extern const uint8_t BITMAP_Z[];
+typedef uint8_t *bitmap_display;
 
-// Lowercase Letters
-extern const uint8_t BITMAP_a[];
-extern const uint8_t BITMAP_b[];
-extern const uint8_t BITMAP_c[];
-extern const uint8_t BITMAP_d[];
-extern const uint8_t BITMAP_e[];
-extern const uint8_t BITMAP_f[];
-extern const uint8_t BITMAP_g[];
-extern const uint8_t BITMAP_h[];
-extern const uint8_t BITMAP_i[];
-extern const uint8_t BITMAP_j[];
-extern const uint8_t BITMAP_k[];
-extern const uint8_t BITMAP_l[];
-extern const uint8_t BITMAP_m[];
-extern const uint8_t BITMAP_n[];
-extern const uint8_t BITMAP_o[];
-extern const uint8_t BITMAP_p[];
-extern const uint8_t BITMAP_q[];
-extern const uint8_t BITMAP_r[];
-extern const uint8_t BITMAP_s[];
-extern const uint8_t BITMAP_t[];
-extern const uint8_t BITMAP_u[];
-extern const uint8_t BITMAP_v[];
-extern const uint8_t BITMAP_w[];
-extern const uint8_t BITMAP_x[];
-extern const uint8_t BITMAP_y[];
-extern const uint8_t BITMAP_z[];
+extern const uint8_t BITMAP_A[8];
+extern const uint8_t BITMAP_B[8];
+extern const uint8_t BITMAP_C[8];
+extern const uint8_t BITMAP_D[8];
+extern const uint8_t BITMAP_E[8];
+extern const uint8_t BITMAP_F[8];
+extern const uint8_t BITMAP_G[8];
+extern const uint8_t BITMAP_H[8];
+extern const uint8_t BITMAP_I[8];
+extern const uint8_t BITMAP_J[8];
+extern const uint8_t BITMAP_K[8];
+extern const uint8_t BITMAP_L[8];
+extern const uint8_t BITMAP_M[8];
+extern const uint8_t BITMAP_N[8];
+extern const uint8_t BITMAP_O[8];
+extern const uint8_t BITMAP_P[8];
+extern const uint8_t BITMAP_Q[8];
+extern const uint8_t BITMAP_R[8];
+extern const uint8_t BITMAP_S[8];
+extern const uint8_t BITMAP_T[8];
+extern const uint8_t BITMAP_U[8];
+extern const uint8_t BITMAP_V[8];
+extern const uint8_t BITMAP_W[8];
+extern const uint8_t BITMAP_X[8];
+extern const uint8_t BITMAP_Y[8];
+extern const uint8_t BITMAP_Z[8];
 
 // Numbers
-extern const uint8_t BITMAP_0[];
-extern const uint8_t BITMAP_1[];
-extern const uint8_t BITMAP_2[];
-extern const uint8_t BITMAP_3[];
-extern const uint8_t BITMAP_4[];
-extern const uint8_t BITMAP_5[];
-extern const uint8_t BITMAP_6[];
-extern const uint8_t BITMAP_7[];
-extern const uint8_t BITMAP_8[];
-extern const uint8_t BITMAP_9[];
+extern const uint8_t BITMAP_0[8];
+extern const uint8_t BITMAP_1[8];
+extern const uint8_t BITMAP_2[8];
+extern const uint8_t BITMAP_3[8];
+extern const uint8_t BITMAP_4[8];
+extern const uint8_t BITMAP_5[8];
+extern const uint8_t BITMAP_6[8];
+extern const uint8_t BITMAP_7[8];
+extern const uint8_t BITMAP_8[8];
+extern const uint8_t BITMAP_9[8];
+
+// Special Symbols
+extern const uint8_t BITMAP_SPACE[8];
+extern const uint8_t BITMAP_EXCLAM[8];
+extern const uint8_t BITMAP_DQUOTE[8];
+extern const uint8_t BITMAP_HASH[8];
+extern const uint8_t BITMAP_DOLLAR[8];
+extern const uint8_t BITMAP_PERCENT[8];
+extern const uint8_t BITMAP_AMPERSAND[8];
+extern const uint8_t BITMAP_SQUOTE[8];
+extern const uint8_t BITMAP_LPAREN[8];
+extern const uint8_t BITMAP_RPAREN[8];
+extern const uint8_t BITMAP_ASTERISK[8];
+extern const uint8_t BITMAP_PLUS[8];
+extern const uint8_t BITMAP_COMMA[8];
+extern const uint8_t BITMAP_MINUS[8];
+extern const uint8_t BITMAP_PERIOD[8];
+extern const uint8_t BITMAP_SLASH[8];
+extern const uint8_t BITMAP_COLON[8];
+extern const uint8_t BITMAP_SEMICOLON[8];
+extern const uint8_t BITMAP_LESS[8];
+extern const uint8_t BITMAP_EQUAL[8];
+extern const uint8_t BITMAP_GREATER[8];
+extern const uint8_t BITMAP_QUESTION[8];
+extern const uint8_t BITMAP_AT[8];
+extern const uint8_t BITMAP_LBRACKET[8];
+extern const uint8_t BITMAP_BACKSLASH[8];
+extern const uint8_t BITMAP_RBRACKET[8];
+extern const uint8_t BITMAP_CARET[8];
+extern const uint8_t BITMAP_ARROW_L[8];
+
+#endif // LETTERS_H
 
 #endif 
 
