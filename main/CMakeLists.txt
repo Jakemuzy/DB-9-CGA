@@ -1,3 +1,3 @@
 idf_component_register(SRCS "main.c" "display.c" "letters.c"
-                       PRIV_REQUIRES spi_flash esp_lcd esp_timer
+                       PRIV_REQUIRES spi_flash esp_lcd esp_timer heap
 		       INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include")

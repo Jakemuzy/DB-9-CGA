@@ -5,6 +5,7 @@
 
 #include "esp_lcd_panel_rgb.h"
 #include "esp_lcd_panel_ops.h"
+#include "esp_log.h"
 
 #include "letters.h"
 #include "colors.h"
@@ -44,6 +45,6 @@ void swap_buffers(BufferInfo *buf);
 
 void buffer_draw_borders(BufferInfo *info);
 void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t radius, Color color, Brightness brightness);
-void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness); // Centered on (posx, posy)
+void buffer_draw_char(BufferInfo *info, bitmap_display character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness); // Centered on (posx, posy)
 
 #endif

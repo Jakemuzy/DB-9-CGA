@@ -61,8 +61,7 @@
 	- 
 */
 
-
-static const char* TAG = "ESP32";
+static const char* TAG = "main";
 
 void *fb1 = NULL, *fb2 = NULL;
 esp_lcd_panel_handle_t panel_handle = NULL;
@@ -168,9 +167,38 @@ void app_main()
             DB9_DARK
         );
 
+        buffer_draw_char(
+            info,
+            (bitmap_display)BITMAP_Y,
+            20,
+            40,
+            1,
+            DB9_BLUE,
+            DB9_BRIGHT
+        );
+
+        buffer_draw_char(
+            info,
+            (bitmap_display)BITMAP_O,
+            36,
+            40,
+            1,
+            DB9_BLUE,
+            DB9_BRIGHT
+        );
+
+        buffer_draw_char(
+            info,
+            (bitmap_display)BITMAP_U,
+            52,
+            40,
+            1,
+            DB9_BLUE,
+            DB9_BRIGHT
+        );
+
         swap_buffers(info);
 
-        ESP_LOGI(TAG, "Finished drawing circle.");
 	vTaskDelay(pdMS_TO_TICKS(300));
     }
 

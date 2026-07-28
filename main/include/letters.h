@@ -13,7 +13,7 @@
 #define DEFAULT_CHAR_WIDTH_PIXELS 8
 #define DEFAULT_CHAR_HEIGHT_PIXELS 8
 
-typedef uint8_t *bitmap_display;
+typedef uint8_t* bitmap_display;
 
 extern const uint8_t BITMAP_A[8];
 extern const uint8_t BITMAP_B[8];
@@ -84,7 +84,4 @@ extern const uint8_t BITMAP_RBRACKET[8];
 extern const uint8_t BITMAP_CARET[8];
 extern const uint8_t BITMAP_ARROW_L[8];
 
-#endif // LETTERS_H
-
 #endif 
-

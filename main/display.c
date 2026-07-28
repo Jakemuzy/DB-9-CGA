@@ -1,5 +1,7 @@
 #include "display.h"
 
+static const char* TAG = "display";
+
 
 void update_buffers(BufferInfo *info)
 {
@@ -48,9 +50,10 @@ void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t
 			info->draw_buf[idx] = pixel_color;
 		}
 	}
+	ESP_LOGI(TAG, "Finished drawing circle.");
 }
 
-void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
+void buffer_draw_char(BufferInfo *info, bitmap_display character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
 {
 	// Position is top left, draws from top left to bottom right
 	
@@ -67,27 +70,29 @@ void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx
 
 	    for (uint16_t x = posx; x < posx + char_width_pixels; x++)
 	    {
- 		if (x > info->screen_width)
-		    break;	
+			if (x > info->screen_width)
+				break;	
 
-		uint8_t mapped_x = idx_x / scale;
-		uint8_t mapped_y = idx_y / scale;
+			uint8_t mapped_x = idx_x / scale;
+			uint8_t mapped_y = idx_y / scale;
 
-		// Shift is backwards cuz old fonts were written backwards
-	        bool activated = (character[mapped_y] & (1 >> mapped_x)) != 0; 
-		
-		if (activated)
-		{
-		    int idx = y * info->screen_width + x;
-		    info->draw_buf[idx] = color | brightness;
-		}
+			// Shift is backwards cuz old fonts were written backwards
+			bool activated = (character[mapped_y] & (1 << mapped_x)) != 0; 
+			
+			if (activated)
+			{
+				int idx = y * info->screen_width + x;
+				info->draw_buf[idx] = color | brightness;
+			}
 
-		idx_x++;
+			idx_x++;
 	    }
 
 	    idx_x = 0;
 	    idx_y++;
 	}
+
+	ESP_LOGI(TAG, "Finished drawing letter.");
 
     /*
      So the real question is since this function isn't very cachce locality friendly there must be a lot of page misses (debateable since the screen is only 640x200 which can almost be fit into esp32-s3s rom if not for the fact that each pixel uses uint16_t). But anyways the real question is since the locality isn't the best and the esp32-s3 must supply consistent vsync and hsync pulses to keep the display driven on a crt wouldn't this function slow that down a lot? Especially if many characters need to be written?
