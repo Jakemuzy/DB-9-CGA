@@ -1,21 +1,46 @@
 #ifndef MQTT_H_
 #define MQTT_H_
 
-/* 
-   NOTES:
-	- This entire file will run on a separate thread in order to not interrupt the main display thread
-	- Its main purpose is to intercept / send out notifications
-	- Received notifications (via MQTT) will be interpretted as on screen messages
-	- Sent messages are strictly for responses
-	- Received messages are ONLY in a blob binary format, meaning the first thread can just display them once they are written to the secondary buffer
+/*
+ 	 Mqtt Client
+	-------------
+    Run on dedicated thread.
+     Receives binary blobs 
+   representing screen data as
+   well as notificaiton levels
+
+       Calls display to 
+  write them to the back-buffer.
 
 */
 
-void InitializeMQQTTClient();
+#include "string.h"
+ 
+#include "esp_log.h"
 
-void ReceiveBlob();
-void ReceiveConfig();
-void SendBlob();
+// These could potentially be in config
+#define ADDRESS "tcp://localhost:1883"
+#define CLIENTID "DB9Client"
+#define QOS 1
+#define TIMEOUT 10000L
 
+#define TOPIC_BLOB "/db9/blob"
+#define TOPIC_CONFIG "/db9/config"
+#define TOPIC_SLEEP "/db9/sleep"
+#define TOPIC_WAKE "/db9/wake"
+
+
+/* ----- Functions ----- */
+
+MQTTClient* initialize_mqtt_client();
+void destroy_mqtt_client(MQTTClient* client);
+
+void callback_message_arrived(void* context, char* topicName, int topicLen, MQTTClient_message* message);
+void callback_message_dropped(void* context, char* cause);
+
+void receive_blob(void* blob, int len);
+void receive_config(void* conf int len);
+void receive_sleep(void);
+void receive_wake(void);
 
 #endif 

@@ -16,6 +16,8 @@
 #include "esp_lcd_panel_ops.h"
 #include "esp_log.h"
 
+#include "config.h"
+
 #define MARGIN_BETWEEN_ELEMENTS 5
 #define BORDER_PADDING 5
 #define ASPECT_RATIO 0.4f	// This honestly looks better than the mathematically correct formula
@@ -36,14 +38,9 @@ typedef struct BufferInfo {
 
 /* ----- Functions & Creation ----- */
 
-BufferInfo* initialize_bufferinfo(
-    esp_lcd_panel_handle_t handle, 
-    unsigned int screen_width, 
-    unsigned int screen_height
-);
+BufferInfo* initialize_bufferinfo();
 
 void update_buffer(BufferInfo *buf, uint16_t* blob);
 void swap_buffers(BufferInfo *buf);
-void draw_buffers(BufferInfo *buf);
 
 #endif

@@ -31,43 +31,22 @@
 #include "display.h"
 #include "config.h"
 
-#include "config.h"
-
 
 static const char* TAG = "DB9 (main)";
 
 
-
 void app_main()
 {
-    // Creates esp lcd obj
-    //
+    // 1.) Starts up mqtt client on another thread
+    
 
-    ESP_LOGI(TAG, "Clearing Screen...");
+    // 2.) Create buffer for rendering
+    BufferInfo *info = initialize_buffer_info();
 
-    ESP_LOGI(TAG, "Drawing...");
-    BufferInfo *info = malloc(sizeof(BufferInfo));
-    info->screen_width = SCREEN_WIDTH;
-    info->screen_height = SCREEN_HEIGHT;
-    info->handle = panel_handle;
-    info->fb1 = fb1;
-    info->fb2 = fb2;
-    info->draw_buf = fb1;
-
-    Color color = DB9_RED;
-    while (1) {
-        buffer_draw_circle(
-            info,
-            (uint16_t)(SCREEN_WIDTH / 2),
-            (uint16_t)(SCREEN_HEIGHT /2),
-            (uint16_t)(SCREEN_WIDTH / 8),
-            color,
-            DB9_DARK
-        );
-
+    // 3.) Run continuously on this thread
+    while (1) 
+    {
         swap_buffers(info);
-
-        ESP_LOGI(TAG, "Finished drawing circle.");
 	vTaskDelay(pdMS_TO_TICKS(300));
     }
 
