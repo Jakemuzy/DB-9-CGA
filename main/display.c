@@ -1,115 +1,44 @@
 #include "display.h"
 
-static const char* TAG = "display";
+static const char* TAG = "DB9 (display)";
 
-void update_buffers(BufferInfo *info)
+BufferInfo* initialize_bufferinfo(esp_lcd_panel_handle_t handle, unsigned int screen_width, unsigned int screen_height) 
 {
+    // Initialize
+    
+    ESP_ERROR_CHECK(
+	esp_lcd_rgb_panel_get_frame_buffer(
+	    panel_handle, 
+	    2, 
+	    &fb1, 
+	    &fb2
+	)
+    );
 
+}
+
+void update_buffer(BufferInfo *buf, uint16_t* blob)
+{
+    uint16_t* back_buffer = (buf->fb1 == buf->draw_buf) ? buf->fb2 : buf->fb1;
+
+    memcpy(back_buffer, blob, sizeof(uint16_t));
 }
 
 void swap_buffers(BufferInfo *info)
 {
-	esp_lcd_panel_draw_bitmap(
-		info->handle, 
-		0, 0, 
-		info->screen_width, 
-		info->screen_height, 
-		info->draw_buf
-	);
+    esp_lcd_panel_draw_bitmap(
+        info->handle, 
+	0, 0, 
+	info->screen_width, 
+	info->screen_height, 
+	info->draw_buf
+    );
 
-	info->draw_buf = (info->draw_buf == (uint16_t*)info->fb1) ? (uint16_t*)info->fb2 : (uint16_t*)info->fb1;
+    info->draw_buf = (info->draw_buf == (uint16_t*)info->fb1) ? (uint16_t*)info->fb2 : (uint16_t*)info->fb1;
 }
 
-void buffer_draw_borders(BufferInfo *info)
+void draw_buffers(BufferInfo *buf);
 {
-
-}
-
-void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t radius, uint16_t line_weight, Color color, Brightness brightness)
-{
-    float inner_radius_sq = (radius - line_weight) * (radius - line_weight),
-          outer_radius_sq = (radius + line_weight) * (radius + line_weight);
-
-	for (int y = 0; y < info->screen_height; y++) {
-		for (int x = 0; x < info->screen_width; x++) {
-
-			float dx = (x * ASPECT_RATIO) - (posx * ASPECT_RATIO);
-			float dy = y - posy;
-
-			float dist_to_center = dx * dx + dy * dy;
-
-			// Color the perimeter only
-			Color pixel_color = DB9_BLACK;
-			if (dist_to_center >= inner_radius_sq && 
-				dist_to_center <= outer_radius_sq ){
-				pixel_color = color | brightness;
-			}
-
-			int idx = y * info->screen_width + x;
-			info->draw_buf[idx] = pixel_color;
-		}
-	}
-	ESP_LOGI(TAG, "Finished drawing circle.");
-}
-
-<<<<<<< HEAD
-void buffer_draw_char(BufferInfo *info, bitmap_display character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
-=======
-void buffer_draw_rect(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t width, uint16_t height, uint16_t line_weight, Color color, Brightness brightness)
-{
-    for (uint16_t x = posx; x < posx + width; x++) 
-    {
-	for (uint16_t y = posy; y < posy + height; y++)
-	{
-	}
-    }
-}
-
-void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
->>>>>>> 09e7f77 (ADD: Pre merge)
-{
-	// Position is top left, draws from top left to bottom right
-	
-	uint16_t char_width_pixels = scale * DEFAULT_CHAR_WIDTH_PIXELS;
-	uint16_t char_height_pixels = scale * DEFAULT_CHAR_HEIGHT_PIXELS;
-
-	// Index of the bitmap (for sampling)
-	uint16_t idx_x = 0, idx_y = 0;
-
-	for (uint16_t y = posy; y < posy + char_height_pixels; y++)
-	{
-	    if (y > info->screen_height)
-	        break;
-
-	    for (uint16_t x = posx; x < posx + char_width_pixels; x++)
-	    {
-			if (x > info->screen_width)
-				break;	
-
-			uint8_t mapped_x = idx_x / scale;
-			uint8_t mapped_y = idx_y / scale;
-
-			// Shift is backwards cuz old fonts were written backwards
-			bool activated = (character[mapped_y] & (1 << mapped_x)) != 0; 
-			
-			if (activated)
-			{
-				int idx = y * info->screen_width + x;
-				info->draw_buf[idx] = color | brightness;
-			}
-
-			idx_x++;
-	    }
-
-	    idx_x = 0;
-	    idx_y++;
-	}
-
-	ESP_LOGI(TAG, "Finished drawing letter.");
-
-    /*
-     So the real question is since this function isn't very cachce locality friendly there must be a lot of page misses (debateable since the screen is only 640x200 which can almost be fit into esp32-s3s rom if not for the fact that each pixel uses uint16_t). But anyways the real question is since the locality isn't the best and the esp32-s3 must supply consistent vsync and hsync pulses to keep the display driven on a crt wouldn't this function slow that down a lot? Especially if many characters need to be written? NOTE: This is addressed in the readme
-    */
-
+    // I dont think necessary since esp just reads this data
 }
 
