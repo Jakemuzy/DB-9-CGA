@@ -163,6 +163,7 @@ void app_main()
             (uint16_t)(SCREEN_WIDTH / 2),
             (uint16_t)(SCREEN_HEIGHT /2),
             (uint16_t)(SCREEN_WIDTH / 8),
+	    3, 
             color,
             DB9_DARK
         );

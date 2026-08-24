@@ -2,7 +2,6 @@
 
 static const char* TAG = "display";
 
-
 void update_buffers(BufferInfo *info)
 {
 
@@ -26,10 +25,10 @@ void buffer_draw_borders(BufferInfo *info)
 
 }
 
-void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t radius, Color color, Brightness brightness)
+void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t radius, uint16_t line_weight, Color color, Brightness brightness)
 {
-    float inner_radius_sq = (radius - 3) * (radius - 3),
-          outer_radius_sq = (radius + 3) * (radius + 3);
+    float inner_radius_sq = (radius - line_weight) * (radius - line_weight),
+          outer_radius_sq = (radius + line_weight) * (radius + line_weight);
 
 	for (int y = 0; y < info->screen_height; y++) {
 		for (int x = 0; x < info->screen_width; x++) {
@@ -53,7 +52,21 @@ void buffer_draw_circle(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t
 	ESP_LOGI(TAG, "Finished drawing circle.");
 }
 
+<<<<<<< HEAD
 void buffer_draw_char(BufferInfo *info, bitmap_display character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
+=======
+void buffer_draw_rect(BufferInfo *info, uint16_t posx, uint16_t posy, uint16_t width, uint16_t height, uint16_t line_weight, Color color, Brightness brightness)
+{
+    for (uint16_t x = posx; x < posx + width; x++) 
+    {
+	for (uint16_t y = posy; y < posy + height; y++)
+	{
+	}
+    }
+}
+
+void buffer_draw_char(BufferInfo *info, bitmap_display* character, uint16_t posx, uint16_t posy, uint16_t scale, Color color, Brightness brightness)
+>>>>>>> 09e7f77 (ADD: Pre merge)
 {
 	// Position is top left, draws from top left to bottom right
 	
@@ -95,7 +108,7 @@ void buffer_draw_char(BufferInfo *info, bitmap_display character, uint16_t posx,
 	ESP_LOGI(TAG, "Finished drawing letter.");
 
     /*
-     So the real question is since this function isn't very cachce locality friendly there must be a lot of page misses (debateable since the screen is only 640x200 which can almost be fit into esp32-s3s rom if not for the fact that each pixel uses uint16_t). But anyways the real question is since the locality isn't the best and the esp32-s3 must supply consistent vsync and hsync pulses to keep the display driven on a crt wouldn't this function slow that down a lot? Especially if many characters need to be written?
+     So the real question is since this function isn't very cachce locality friendly there must be a lot of page misses (debateable since the screen is only 640x200 which can almost be fit into esp32-s3s rom if not for the fact that each pixel uses uint16_t). But anyways the real question is since the locality isn't the best and the esp32-s3 must supply consistent vsync and hsync pulses to keep the display driven on a crt wouldn't this function slow that down a lot? Especially if many characters need to be written? NOTE: This is addressed in the readme
     */
 
 }
