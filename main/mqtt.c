@@ -6,7 +6,7 @@ static const char* TAG = "DB9 (mqtt)";
 esp_mqtt_client_handle_t initialize_mqtt_client()
 {
     esp_mqtt_client_config_t mqtt_cfg = {
-        .broker.address.uri = BROKER_URI,
+        .broker.address.uri = ADDRESS,
         .credentials.client_id = CLIENTID,
     };
 
@@ -93,7 +93,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
 
 
 
-void receive_blob(uint16_t* blob, int len)
+void receive_blob(void* blob, int len)
 {
     ESP_LOGI(TAG, "Processing inbound binary display frame buffer updates (%d bytes)...", len);
 }

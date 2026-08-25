@@ -38,7 +38,7 @@ typedef struct BufferInfo {
 
 /* ----- Functions & Creation ----- */
 
-BufferInfo* initialize_bufferinfo();
+BufferInfo* initialize_buffer_info();
 
 void update_buffer(BufferInfo *buf, uint16_t* blob);
 void swap_buffers(BufferInfo *buf);

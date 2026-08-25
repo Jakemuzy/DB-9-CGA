@@ -1,4 +1,4 @@
-#include "db9_config.h"
+#include "config.h"
 
 static unsigned int DESIRED_CLOCK_RATE = 14318180;
 static unsigned int VSYNC_RATE         = 60;

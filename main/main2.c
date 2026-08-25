@@ -30,6 +30,7 @@
 
 #include "display.h"
 #include "mqtt.h"
+#include "network.h"
 #include "config.h"
 
 
@@ -38,13 +39,21 @@ static const char* TAG = "DB9 (main)";
 
 void app_main()
 {
-    // Starts up on another thread
-    MQTTClient* client = initialize_mqtt_client();
 
-    
+    esp_mqtt_client_handle_t client;
+    NetworkCallback network_event = { 
+    	.event_base = IP_EVENT,
+	.event_id = IP_EVENT_STA_GOT_IP,
+  	.function = initialize_mqtt_client();
+	.output = (void*)client;
+    };
+    initialize_network_events(network_events, 1);
+
 
     // 2.) Create buffer for rendering
+    ESP_LOG((TAG, "Initializing screen buffers...");
     BufferInfo *info = initialize_buffer_info();
+    ESP_LOG((TAG, "SUCCESS: initialized screen buffers.");
 
     // 3.) Run continuously on this thread
     while (1) 
@@ -53,6 +62,8 @@ void app_main()
 	vTaskDelay(pdMS_TO_TICKS(300));
     }
 
+    ESP_LOG((TAG, "Destroying mqtt client...");
     destroy_mqtt_client(client);
+    ESP_LOG((TAG, "SUCCESS: destroyed mqtt client...");
 
 }

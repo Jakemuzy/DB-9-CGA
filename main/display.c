@@ -2,7 +2,7 @@
 
 static const char* TAG = "DB9 (display)";
 
-BufferInfo* initialize_bufferinfo() 
+BufferInfo* initialize_buffer_info() 
 {
     // Creates actual object
     ESP_LOGI(TAG, "Initializing Buffer Object...");
@@ -75,15 +75,15 @@ BufferInfo* initialize_bufferinfo()
 	)
     );
 
-    ESP_ERROR_CHECK(esp_lcd_panel_reset(&info->handle));
-    ESP_ERROR_CHECK(esp_lcd_panel_init(&info->handle));
+    ESP_ERROR_CHECK(esp_lcd_panel_reset(info->handle));
+    ESP_ERROR_CHECK(esp_lcd_panel_init(info->handle));
     
     ESP_ERROR_CHECK(
 	esp_lcd_rgb_panel_get_frame_buffer(
 	    info->handle, 
 	    2, 
-	    &info->fb1, 
-	    &info->fb2
+	    (void**)&info->fb1, 
+	    (void**)&info->fb2
 	)
     );
 
@@ -98,7 +98,7 @@ void update_buffer(BufferInfo *buf, uint16_t* blob)
     memcpy(
 	back_buffer, 
 	blob, 
-	buf->screen_widht * buf->screen_height * sizeof(uint16_t)
+	buf->screen_width * buf->screen_height * sizeof(uint16_t)
     );
 }
 

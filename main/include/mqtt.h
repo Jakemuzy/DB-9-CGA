@@ -20,7 +20,7 @@
 #include "mqtt_client.h"
 
 // These could potentially be in config
-#define ADDRESS "tcp://localhost:1883"
+#define ADDRESS "mqtt://localhost:1883"
 #define CLIENTID "DB9Client"
 
 #define TOPIC_BLOB "/db9/blob"
