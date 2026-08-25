@@ -3,7 +3,7 @@
 static const char* TAG = "DB9 (mqtt)";
 
 
-esp_mqtt_client_handle_t initialize_mqtt_client()
+void* initialize_mqtt_client(void* args) // Args ignored for now (required to be NetworkCallback)
 {
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = ADDRESS,
@@ -26,7 +26,7 @@ esp_mqtt_client_handle_t initialize_mqtt_client()
         return NULL;
     }
 
-    return client;
+    return (void*)client;
 }
 
 void destroy_mqtt_client(esp_mqtt_client_handle_t client)

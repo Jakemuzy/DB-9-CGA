@@ -1,18 +1,44 @@
 #include "network.h"
 
-typedef struct NetworkCallback {
-    esp_event_base_t event_base;
-    int32_t event_id;
-
-    void* (*function)(void*);
-    void* output;
-} NetworkCallback;
+/* ----- Persistent Variables ----- */
 
 static NetworkCallback* callbacks;
 static uint16_t num_callbacks;
 
 
 /* ----- Functions & Callbacks ----- */
+
+void initialize_network_stack()
+{
+    // Wifi storage
+    esp_err_t ret = nvs_flash_init();
+    ESP_ERROR_CHECK(ret);
+
+    // Init net interface and event loop
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    esp_netif_create_default_wifi_sta();
+
+    // Register custom callbacks
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &network_event_handler, NULL, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &network_event_handler, NULL, NULL));
+
+    // Configurations
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+
+    wifi_config_t wifi_config = {
+        .sta = {
+            .ssid = secrets_get_wifi_ssid(),       
+            .password = secrets_get_wifi_password(),
+        },
+    };
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+
+    // Start 
+    ESP_ERROR_CHECK(esp_wifi_start());
+}
 
 void initialize_network_events(NetworkCallback* _callbacks, uint16_t _num_callbacks)
 {
@@ -22,11 +48,23 @@ void initialize_network_events(NetworkCallback* _callbacks, uint16_t _num_callba
 
 void network_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data)
 {
-    for (size_t i = 0; i < num_callbacks; i++) {
-	NetworkCallback callback = callbacks[i];
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+        esp_wifi_connect();
+        return;
+    }
+    
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        esp_wifi_connect();
+        return;
+    }
 
-	if (event_base == callback.event_base && event_id == callback.event_id) {
-  	     callack.output = (void*)callback.function();
+
+    // Iterate the custom events
+    for (size_t i = 0; i < num_callbacks; i++) {
+	NetworkCallback* callback = &callbacks[i];
+
+	if (event_base == callback->event_base && event_id == callback->event_id) {
+  	     callback->output = callback->function(NULL);
 	}
      }
 }

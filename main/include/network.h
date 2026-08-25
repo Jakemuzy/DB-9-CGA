@@ -13,6 +13,12 @@
 #include <string.h>
 
 #include "esp_log.h"
+#include "nvs_flash.h"
+#include "esp_wifi.h"
+#include "esp_netif.h"
+#include "esp_netif_types.h"
+#include "esp_event.h"
+
 
 #include "config.h"
 
@@ -30,6 +36,7 @@ typedef struct NetworkCallback {
 
 /* ----- Functions & Callbacks ----- */
 
+void initialize_network_stack(void);
 void initialize_network_events(NetworkCallback* _callbacks, uint16_t _num_callbacks);
 
 void network_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data);

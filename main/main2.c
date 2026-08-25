@@ -28,10 +28,11 @@
 #include "esp_lcd_panel_ops.h"
 #include "driver/gpio.h"
 
-#include "display.h"
-#include "mqtt.h"
-#include "network.h"
+#include "secrets.h"
 #include "config.h"
+#include "network.h"
+#include "mqtt.h"
+#include "display.h"
 
 
 static const char* TAG = "DB9 (main)";
@@ -39,31 +40,40 @@ static const char* TAG = "DB9 (main)";
 
 void app_main()
 {
-
-    esp_mqtt_client_handle_t client;
     NetworkCallback network_event = { 
     	.event_base = IP_EVENT,
 	.event_id = IP_EVENT_STA_GOT_IP,
-  	.function = initialize_mqtt_client();
-	.output = (void*)client;
+  	.function = initialize_mqtt_client,
+	.output = NULL
     };
-    initialize_network_events(network_events, 1);
+    initialize_network_events(&network_event, 1);
+    init_wifi();
 
+    while (network_event.output == NULL) {
+	ESP_LOGI(TAG, "Wifi not found yet, scanning...");
+	vTaskDelay(pdMS_TO_TICKS(1000));
+    }
 
-    // 2.) Create buffer for rendering
-    ESP_LOG((TAG, "Initializing screen buffers...");
+    ESP_LOGI(TAG, "Initializing screen buffers...");
     BufferInfo *info = initialize_buffer_info();
-    ESP_LOG((TAG, "SUCCESS: initialized screen buffers.");
+    ESP_LOGI(TAG, "SUCCESS: initialized screen buffers.");
 
-    // 3.) Run continuously on this thread
+    /*
     while (1) 
     {
         swap_buffers(info);
 	vTaskDelay(pdMS_TO_TICKS(300));
     }
+    */
 
-    ESP_LOG((TAG, "Destroying mqtt client...");
-    destroy_mqtt_client(client);
-    ESP_LOG((TAG, "SUCCESS: destroyed mqtt client...");
 
+    // Disconnect from mqtt
+    if (network_event.output != NULL) {
+	ESP_LOGI(TAG, "Destroying mqtt client...");
+
+        esp_mqtt_client_handle_t client = network_event.output;
+        destroy_mqtt_client(client);
+
+	ESP_LOGI(TAG, "SUCCESS: destroyed mqtt client...");
+    }
 }

@@ -43,10 +43,10 @@ unsigned int config_get_hsync(void);
 unsigned int config_get_screen_width(void);
 unsigned int config_get_screen_height(void);
 
-void config_set_clock_rate(unsigned int val);
-void config_set_vsync(unsigned int val);
-void config_set_hsync(unsigned int val);
-void config_set_screen_width(unsigned int val);
-void config_set_screen_height(unsigned int val);
+void  config_set_clock_rate(unsigned int val);
+void  config_set_vsync(unsigned int val);
+void  config_set_hsync(unsigned int val);
+void  config_set_screen_width(unsigned int val);
+void  config_set_screen_height(unsigned int val);
 
 #endif

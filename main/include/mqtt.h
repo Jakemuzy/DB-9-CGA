@@ -31,7 +31,7 @@
 
 /* ----- Functions ----- */
 
-esp_mqtt_client_handle_t initialize_mqtt_client();
+void* initialize_mqtt_client(void* args);
 void destroy_mqtt_client(esp_mqtt_client_handle_t client);
 
 void mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_t event_id, void* event_data);
