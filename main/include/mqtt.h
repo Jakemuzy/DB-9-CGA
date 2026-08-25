@@ -17,12 +17,11 @@
 #include "string.h"
  
 #include "esp_log.h"
+#include "mqtt_client.h"
 
 // These could potentially be in config
 #define ADDRESS "tcp://localhost:1883"
 #define CLIENTID "DB9Client"
-#define QOS 1
-#define TIMEOUT 10000L
 
 #define TOPIC_BLOB "/db9/blob"
 #define TOPIC_CONFIG "/db9/config"
@@ -32,14 +31,13 @@
 
 /* ----- Functions ----- */
 
-MQTTClient* initialize_mqtt_client();
-void destroy_mqtt_client(MQTTClient* client);
+esp_mqtt_client_handle_t initialize_mqtt_client();
+void destroy_mqtt_client(esp_mqtt_client_handle_t client);
 
-void callback_message_arrived(void* context, char* topicName, int topicLen, MQTTClient_message* message);
-void callback_message_dropped(void* context, char* cause);
+void mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_t event_id, void* event_data);
 
 void receive_blob(void* blob, int len);
-void receive_config(void* conf int len);
+void receive_config(void* conf, int len);
 void receive_sleep(void);
 void receive_wake(void);
 

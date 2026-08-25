@@ -3,94 +3,91 @@
 static const char* TAG = "DB9 (mqtt)";
 
 
-MQTTClient* initialize_mqtt_client()
+esp_mqtt_client_handle_t initialize_mqtt_client()
 {
-    MQTTClient* client = malloc(sizeof(MQTTClient));
-    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    int rc;
+    esp_mqtt_client_config_t mqtt_cfg = {
+        .broker.address.uri = BROKER_URI,
+        .credentials.client_id = CLIENTID,
+    };
 
-    rc = MQTTClient_create(
-	client, 
-	ADDRESS, 
-	CLIENTID,
-        MQTTCLIENT_PERSISTENCE_NONE, 
-	NULL
-    );
-
-    if (rc != MQTTCLIENT_SUCCESS) {
-        ESP_LOGE(TAG, "Failed to create MQTT client instance, rc=%d", rc);
-        free(client);
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
+    if (client == NULL) {
+        ESP_LOGE(TAG, "Failed to initialize native MQTT configuration structural bounds.");
         return NULL;
     }
 
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
 
-    MQTTClient_setCallbacks(
-	*client, 
-	NULL, 
-	callback_message_dropped, 
-	callback_message_arrived, 
-	NULL
-    );
-
-    conn_opts.keepAliveInterval = 20;
-    conn_opts.cleansession = 1;
-
-    if ((rc = MQTTClient_connect(*client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-    {
-	ESP_LOGE(TAG, "Failed to establish MQTT broker connection links, rc=%d", rc);
-        MQTTClient_destroy(client);
-	return NULL;
+    // Starts the background daemon thread automatically
+    esp_err_t err = esp_mqtt_client_start(client);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to start MQTT loop engine client thread, err=%d", err);
+        esp_mqtt_client_destroy(client);
+        return NULL;
     }
 
-    MQTTClient_subscribe(*client, TOPIC_BLOB, 1);
-    MQTTClient_subscribe(*client, TOPIC_CONFIG, 1);
-    MQTTClient_subscribe(*client, TOPIC_SLEEP, 1);
-    MQTTClient_subscribe(*client, TOPIC_WAKE, 1);
-
-    ESP_LOGI(TAG, "MQTT subsystem successfully linked and monitoring topics.");
     return client;
 }
 
-void destroy_mqtt_client(MQTTClient* client)
+void destroy_mqtt_client(esp_mqtt_client_handle_t client)
 {
-    MQTTClient_disconnect(*client, 10000);
-    MQTTClient_destroy(client);
-    free(client);
-}
-
-
-
-
-
-void callback_message_arrived(void* context, char* topicName, int topicLen, MQTTClient_message* message)
-{
-    if (!message || !message->payload) return 1;
-
-    // Route the message
-    if (strcmp(topicName, TOPIC_BLOB) == 0) {
-        receive_blob(message->payload, message->payloadlen);
-    } 
-    else if (strcmp(topicName, TOPIC_CONFIG) == 0) {
-        receive_config(message->payload, message->payloadlen);
-    } 
-    else if (strcmp(topicName, TOPIC_SLEEP) == 0) {
-        receive_sleep();
-    } 
-    else if (strcmp(topicName, TOPIC_WAKE) == 0) {
-        receive_wake();
-    } 
-    else {
-        ESP_LOGW(TAG, "Unhandled topic update received: %s", topicName);
+    if (client) {
+        esp_mqtt_client_stop(client);
+        esp_mqtt_client_destroy(client);
     }
-
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
 }
 
-void callback_message_dropped(void* context, char* cause)
+
+
+
+
+void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
 {
-    ESP_LOGE(TAG, "MQTT Connection dropped. Cause: %s. Initiating retry pipeline...", cause ? cause : "Unknown");
+    esp_mqtt_event_handle_t event = event_data;
+    esp_mqtt_client_handle_t client = event->client;
+
+    switch ((esp_mqtt_event_id_t)event_id) {
+
+        case MQTT_EVENT_CONNECTED:
+            ESP_LOGI(TAG, "MQTT connected. Subscribing to topics...");
+            esp_mqtt_client_subscribe(client, TOPIC_BLOB, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_CONFIG, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_SLEEP, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_WAKE, 1);
+            break;
+
+        case MQTT_EVENT_DISCONNECTED:
+            ESP_LOGE(TAG, "MQTT Connection dropped. Automatic reconnection layer active.");
+            break;
+
+        case MQTT_EVENT_DATA:
+            if (strncmp(event->topic, TOPIC_BLOB, event->topic_len) == 0) {
+                receive_blob(event->data, event->data_len);
+            }
+            else if (strncmp(event->topic, TOPIC_CONFIG, event->topic_len) == 0) {
+                receive_config(event->data, event->data_len);
+            }
+            else if (strncmp(event->topic, TOPIC_SLEEP, event->topic_len) == 0) {
+                receive_sleep();
+            }
+            else if (strncmp(event->topic, TOPIC_WAKE, event->topic_len) == 0) {
+                receive_wake();
+            }
+            else {
+                // Formatting out untrimmed topic data safely via precision flag
+                ESP_LOGW(TAG, "Unhandled topic update received: %.*s", event->topic_len, event->topic);
+            }
+            break;
+
+        case MQTT_EVENT_ERROR:
+            ESP_LOGE(TAG, "MQTT internal engine error occurred.");
+            break;
+
+        default:
+            break;
+    }
 }
+
 
 
 

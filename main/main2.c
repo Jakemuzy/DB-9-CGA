@@ -29,6 +29,7 @@
 #include "driver/gpio.h"
 
 #include "display.h"
+#include "mqtt.h"
 #include "config.h"
 
 
@@ -37,7 +38,9 @@ static const char* TAG = "DB9 (main)";
 
 void app_main()
 {
-    // 1.) Starts up mqtt client on another thread
+    // Starts up on another thread
+    MQTTClient* client = initialize_mqtt_client();
+
     
 
     // 2.) Create buffer for rendering
@@ -49,5 +52,7 @@ void app_main()
         swap_buffers(info);
 	vTaskDelay(pdMS_TO_TICKS(300));
     }
+
+    destroy_mqtt_client(client);
 
 }
