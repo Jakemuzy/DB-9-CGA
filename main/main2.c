@@ -47,7 +47,7 @@ void app_main()
 	.output = NULL
     };
     initialize_network_events(&network_event, 1);
-    init_wifi();
+    init_network_stack();
 
     while (network_event.output == NULL) {
 	ESP_LOGI(TAG, "Wifi not found yet, scanning...");
@@ -58,14 +58,11 @@ void app_main()
     BufferInfo *info = initialize_buffer_info();
     ESP_LOGI(TAG, "SUCCESS: initialized screen buffers.");
 
-    /*
     while (1) 
     {
         swap_buffers(info);
 	vTaskDelay(pdMS_TO_TICKS(300));
     }
-    */
-
 
     // Disconnect from mqtt
     if (network_event.output != NULL) {
