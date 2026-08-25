@@ -54,23 +54,17 @@ void app_main()
 	vTaskDelay(pdMS_TO_TICKS(1000));
     }
 
-    ESP_LOGI(TAG, "Initializing screen buffers...");
-    BufferInfo *info = initialize_buffer_info();
-    ESP_LOGI(TAG, "SUCCESS: initialized screen buffers.");
 
-    while (1) 
-    {
-        swap_buffers(info);
-	vTaskDelay(pdMS_TO_TICKS(300));
-    }
 
-    // Disconnect from mqtt
-    if (network_event.output != NULL) {
-	ESP_LOGI(TAG, "Destroying mqtt client...");
+    // Rendering on background thread
+    xTaskCreatePinnedToCore(
+        display_task,      
+        "display_task",   
+        4096,              
+        NULL,              
+        5,                 // Highest priority
+        NULL,              
+        1                  // 1st core
+    );
 
-        esp_mqtt_client_handle_t client = network_event.output;
-        destroy_mqtt_client(client);
-
-	ESP_LOGI(TAG, "SUCCESS: destroyed mqtt client...");
-    }
 }

@@ -115,3 +115,17 @@ void swap_buffers(BufferInfo *info)
     info->draw_buf = (info->draw_buf == (uint16_t*)info->fb1) ? (uint16_t*)info->fb2 : (uint16_t*)info->fb1;
 }
 
+
+void display_task(void* pvParamaters)
+{
+    ESP_LOGI(TAG, "Initializing screen buffers...");
+    BufferInfo *info = initialize_buffer_info();
+    ESP_LOGI(TAG, "SUCCESS: initialized screen buffers.");
+
+    while (1) {
+        swap_buffers(info);
+        vTaskDelay(pdMS_TO_TICKS(300));
+    }
+}
+
+}
