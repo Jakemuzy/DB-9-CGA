@@ -1,0 +1,2 @@
+Below this line is an example of what the binary sent to the ESP-32 should look like.
+--------------------------------------------------

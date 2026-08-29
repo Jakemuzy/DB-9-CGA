@@ -1,39 +1,121 @@
-#ifndef DB9_MQTT_H_
-#define DB9_MQTT_H_
+#include "mqtt.h"
 
-#include "MQTTClient.h"
+static const char* TAG = "DB9 (mqtt)";
+static BufferInfo** buffer_info;
 
-#define MQTT_URL "127.0.0.1:6213"
-#define MQTT_CLIENT_ID "..."
-#define MQTT_USERNAME "jmuzy"
-#define MQTT_PASSWORD "123456"  // Not in an .env because local get #rekt
 
-typedef struct Client {
-    MQTTClient client;
-    
-} Client;
-
-Client* create_mqtt_client()
+void* initialize_mqtt_client(void* args) // Args ignored for now (required to be NetworkCallback)
 {
-    Client* client = malloc(sizeof(Client));
+    esp_mqtt_client_config_t mqtt_cfg = {
+        .broker.address.uri = ADDRESS,
+        .credentials.client_id = CLIENTID,
+    };
 
-    rc = MQTTClient_create(
-        &client->client, 
-        MQTT_URL, 
-        MQTT_CLIENT_ID, 
-        MQTTCLIENT_PERSISTENCE_NONE, 
-        NULL
-    );
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
+    if (client == NULL) {
+        ESP_LOGE(TAG, "Failed to initialize native MQTT configuration structural bounds.");
+        return NULL;
+    }
 
-    MQTTClient_connectOptions conn_options = MQTTClient_connectOptions_initializer;
-    conn_opts.keepAliveInterval = 10;
-    conn_opts.cleansession = 1;
-    conn_opts.username = MQTT_USERNAME;
-    conn_opts.password = MQTT_PASSWORD;
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
 
-    rc = MQTTClient_connect(client->, conn_opts);
+    // Starts the background daemon thread automatically
+    esp_err_t err = esp_mqtt_client_start(client);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to start MQTT loop engine client thread, err=%d", err);
+        esp_mqtt_client_destroy(client);
+        return NULL;
+    }
 
-    return client;
+    return (void*)client;
 }
 
-#endif
+void destroy_mqtt_client(esp_mqtt_client_handle_t client)
+{
+    if (client) {
+        esp_mqtt_client_stop(client);
+        esp_mqtt_client_destroy(client);
+    }
+}
+
+void pass_buffer_info(BufferInfo** info)
+{
+    buffer_info = info;
+}
+
+
+
+
+
+void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
+{
+    esp_mqtt_event_handle_t event = event_data;
+    esp_mqtt_client_handle_t client = event->client;
+
+    switch ((esp_mqtt_event_id_t)event_id) {
+
+        case MQTT_EVENT_CONNECTED:
+            ESP_LOGI(TAG, "MQTT connected. Subscribing to topics...");
+            esp_mqtt_client_subscribe(client, TOPIC_BLOB, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_CONFIG, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_SLEEP, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_WAKE, 1);
+            break;
+
+        case MQTT_EVENT_DISCONNECTED:
+            ESP_LOGE(TAG, "MQTT Connection dropped. Automatic reconnection layer active.");
+            break;
+
+        case MQTT_EVENT_DATA:
+            if (strncmp(event->topic, TOPIC_BLOB, event->topic_len) == 0) {
+                receive_blob(event->data, event->data_len);
+            }
+            else if (strncmp(event->topic, TOPIC_CONFIG, event->topic_len) == 0) {
+                receive_config(event->data, event->data_len);
+            }
+            else if (strncmp(event->topic, TOPIC_SLEEP, event->topic_len) == 0) {
+                receive_sleep();
+            }
+            else if (strncmp(event->topic, TOPIC_WAKE, event->topic_len) == 0) {
+                receive_wake();
+            }
+            else {
+                // Formatting out untrimmed topic data safely via precision flag
+                ESP_LOGW(TAG, "Unhandled topic update received: %.*s", event->topic_len, event->topic);
+            }
+            break;
+
+        case MQTT_EVENT_ERROR:
+            ESP_LOGE(TAG, "MQTT internal engine error occurred.");
+            break;
+
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+void receive_blob(void* blob, int len)
+{
+    ESP_LOGI(TAG, "Processing inbound binary display frame buffer updates (%d bytes)...", len);
+    update_buffer(*buffer_info, (uint16_t*)blob);
+}
+
+void receive_config(void* conf, int len)
+{
+    ESP_LOGI(TAG, "Parsing text geometry structural mutations configurations...");
+}
+
+void receive_sleep(void)
+{
+    ESP_LOGI(TAG, "Command received: Sleeping...");
+}
+
+void receive_wake(void)
+{
+    ESP_LOGI(TAG, "Command received: Waking...");
+}

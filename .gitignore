@@ -1,2 +1,5 @@
 .env
 build
+sdkconfig*
+secrets.c
+managed_components*
