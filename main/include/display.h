@@ -21,9 +21,8 @@
 
 #include "config.h"
 
-#define MARGIN_BETWEEN_ELEMENTS 5
-#define BORDER_PADDING 5
-#define ASPECT_RATIO 0.4f	// This honestly looks better than the mathematically correct formula
+#define PORT_MAX_DELAY_TICKS 100
+#define DISPLAY_DELAY_MS 300
 				
 
 /* ----- Struct ----- */
@@ -44,10 +43,12 @@ typedef struct BufferInfo { // TODO: Shared resource, should handle
 
 BufferInfo* initialize_buffer_info(void);
 
-void update_buffer(BufferInfo *buf, uint16_t* blob);
-void swap_buffers(BufferInfo *buf);
+void update_buffer(uint16_t* blob);
+void swap_buffers(void);
 
 // Starts rendering loop
+void display_init(void);
 void display_task(void* pvParamaters);
+void display_receive_blob(void* blob, int len);
 
 #endif

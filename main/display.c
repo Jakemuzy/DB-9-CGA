@@ -1,6 +1,8 @@
 #include "display.h"
 
 static const char* TAG = "DB9 (display)";
+static BufferInfo* buffer_info = NULL;
+static SemaphoreHandle_t display_mutex = NULL;
 
 BufferInfo* initialize_buffer_info() 
 {
@@ -90,38 +92,73 @@ BufferInfo* initialize_buffer_info()
     return info;
 }
 
-void update_buffer(BufferInfo *buf, uint16_t* blob)
+void update_buffer(uint16_t* blob)
 {
-    uint16_t* back_buffer = (buf->fb1 == buf->draw_buf) ? buf->fb2 : buf->fb1;
+    uint16_t* back_buffer = (buffer_info->fb1 == buffer_info->draw_buf) ? buffer_info->fb2 : buffer_info->fb1;
 
     memcpy(
-	back_buffer, 
-	blob, 
-	buf->screen_width * buf->screen_height * sizeof(uint16_t)
+        back_buffer, 
+        blob, 
+        buffer_info->screen_width * buffer_info->screen_height * sizeof(uint16_t)
     );
 }
 
-void swap_buffers(BufferInfo *info)
+void swap_buffers()
 {
     esp_lcd_panel_draw_bitmap(
-        info->handle, 
+        buffer_info->handle, 
         0, 0, 
-        info->screen_width, 
-        info->screen_height, 
-        info->draw_buf
+        buffer_info->screen_width, 
+        buffer_info->screen_height, 
+        buffer_info->draw_buf
     );
 
-    info->draw_buf = (info->draw_buf == (uint16_t*)info->fb1) ? (uint16_t*)info->fb2 : (uint16_t*)info->fb1;
+    buffer_info->draw_buf = (buffer_info->draw_buf == (uint16_t*)buffer_info->fb1) ? 
+                            (uint16_t*)buffer_info->fb2 : 
+                            (uint16_t*)buffer_info->fb1;
+
+    // If front and back buffer differ, copy the front into the back upon switch
+    if (buffer_info->fb1 != buffer_info->fb2)
+        buffer_info->fb2 = buffer_info->fb1;
 }
 
+
+
+
+
+void display_init(void)
+{
+    display_mutex = xSemaphoreCreateMutex();
+}
 
 void display_task(void* pvParamaters)
 {
-    BufferInfo* info = (BufferInfo*)pvParamaters;
+    buffer_info = initialize_buffer_info();
 
     while (1) {
-        swap_buffers(info);
-        vTaskDelay(pdMS_TO_TICKS(300));
+        xSemaphoreTake(display_mutex, PORT_MAX_DELAY_TICKS);
+        swap_buffers();
+        xSemaphoreGive(display_mutex);
+        vTaskDelay(pdMS_TO_TICKS(DISPLAY_DELAY_MS));
     }
 }
 
+void display_receive_blob(void* blob, int len)
+{
+    if (display_mutex == NULL || buffer_info == NULL) {
+        ESP_LOGW(TAG, "Blob arrived before display ready, dropping.");
+        return;
+    }
+    size_t expected = (size_t)buffer_info->screen_width
+                     * (size_t)buffer_info->screen_height
+                     * sizeof(uint16_t);
+ 
+    if ((size_t)len != expected) {
+        ESP_LOGW(TAG, "Blob size mismatch: got %d bytes, expected %zu", len, expected);
+        return;
+    }
+
+    xSemaphoreTake(display_mutex, PORT_MAX_DELAY_TICKS);
+    update_buffer((uint16_t*)blob);
+    xSemaphoreGive(display_mutex);
+}

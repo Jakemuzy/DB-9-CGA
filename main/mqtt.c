@@ -1,14 +1,22 @@
 #include "mqtt.h"
 
 static const char* TAG = "DB9 (mqtt)";
-static BufferInfo** buffer_info;
 
+// For reassembling messages
+static uint8_t* rx_buffer = NULL;
+static int rx_buffer_len = 0;
+static int rx_received = 0;
+static char rx_topic[32];
+static int rx_topic_len = 0;
 
 void* initialize_mqtt_client(void* args) // Args ignored for now (required to be NetworkCallback)
 {
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = ADDRESS,
         .credentials.client_id = CLIENTID,
+        .buffer.size = 8192,       
+        .buffer.out_size = 8192,
+
     };
 
     esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
@@ -38,11 +46,6 @@ void destroy_mqtt_client(esp_mqtt_client_handle_t client)
     }
 }
 
-void pass_buffer_info(BufferInfo** info)
-{
-    buffer_info = info;
-}
-
 
 
 
@@ -67,22 +70,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             break;
 
         case MQTT_EVENT_DATA:
-            if (strncmp(event->topic, TOPIC_BLOB, event->topic_len) == 0) {
-                receive_blob(event->data, event->data_len);
-            }
-            else if (strncmp(event->topic, TOPIC_CONFIG, event->topic_len) == 0) {
-                receive_config(event->data, event->data_len);
-            }
-            else if (strncmp(event->topic, TOPIC_SLEEP, event->topic_len) == 0) {
-                receive_sleep();
-            }
-            else if (strncmp(event->topic, TOPIC_WAKE, event->topic_len) == 0) {
-                receive_wake();
-            }
-            else {
-                // Formatting out untrimmed topic data safely via precision flag
-                ESP_LOGW(TAG, "Unhandled topic update received: %.*s", event->topic_len, event->topic);
-            }
+            mqtt_reassamble_packet(event_data);
             break;
 
         case MQTT_EVENT_ERROR:
@@ -94,6 +82,76 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
     }
 }
 
+// Need to reassemble larger packets because they get split into a bunch of smaller ones
+void mqtt_reassamble_packet(void* event_data)
+{
+    esp_mqtt_event_handle_t event = (esp_mqtt_event_handle_t)event_data;
+
+    if (event->current_data_offset == 0) {
+        if (rx_buffer) {
+            ESP_LOGW(TAG, "New message started before previous one finished, discarding partial buffer.");
+            free(rx_buffer);
+            rx_buffer = NULL;
+        }
+
+        rx_buffer_len = event->total_data_len;
+        rx_received = 0;
+        rx_topic_len = event->topic_len < (int)sizeof(rx_topic) - 1 ? event->topic_len : (int)sizeof(rx_topic) - 1;
+        memcpy(rx_topic, event->topic, rx_topic_len);
+        rx_topic[rx_topic_len] = '\0';
+
+        if (rx_buffer_len > 0) {
+            rx_buffer = heap_caps_malloc(rx_buffer_len, MALLOC_CAP_SPIRAM);
+            if (rx_buffer == NULL) {
+                ESP_LOGE(TAG, "Failed to allocate %d bytes for incoming message", rx_buffer_len);
+                rx_buffer_len = 0;
+                return;
+            }
+        }
+    }
+
+    if (event->data_len > 0) {
+        if (rx_buffer == NULL || rx_received + event->data_len > rx_buffer_len) {
+            ESP_LOGW(TAG, "Unexpected fragment, discarding message.");
+            if (rx_buffer) { free(rx_buffer); rx_buffer = NULL; }
+            rx_buffer_len = 0;
+            return;
+        }
+        memcpy(rx_buffer + rx_received, event->data, event->data_len);
+        rx_received += event->data_len;
+    }
+
+    if (rx_received < rx_buffer_len) {
+        return; // still waiting on more fragments
+    }
+
+    mqtt_dispatch_event();
+
+    if (rx_buffer) { free(rx_buffer); rx_buffer = NULL; }
+    rx_buffer_len = 0;
+    rx_received = 0;
+}
+
+void mqtt_dispatch_event(void)
+{
+
+    if (strncmp(rx_topic, TOPIC_BLOB, rx_topic_len) == 0) {
+        receive_blob(rx_buffer, rx_buffer_len);
+    }
+    else if (strncmp(rx_topic, TOPIC_CONFIG, rx_topic_len) == 0) {
+        receive_config(rx_buffer, rx_buffer_len);
+    }
+    else if (strncmp(rx_topic, TOPIC_SLEEP, rx_topic_len) == 0) {
+        receive_sleep();
+    }
+    else if (strncmp(rx_topic, TOPIC_WAKE, rx_topic_len) == 0) {
+        receive_wake();
+    }
+    else {
+        ESP_LOGW(TAG, "Unhandled topic update received: %.*s", rx_topic_len, rx_topic);
+    }
+}
+
 
 
 
@@ -102,7 +160,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
 void receive_blob(void* blob, int len)
 {
     ESP_LOGI(TAG, "Processing inbound binary display frame buffer updates (%d bytes)...", len);
-    update_buffer(*buffer_info, (uint16_t*)blob);
+    display_receive_blob(blob, len);
 }
 
 void receive_config(void* conf, int len)

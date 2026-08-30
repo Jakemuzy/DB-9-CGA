@@ -56,21 +56,15 @@ void app_main()
     }
 
 
-    // Creating in main so it can be shared
-    ESP_LOGI(TAG, "Initializing screen buffers...");
-    BufferInfo *info = initialize_buffer_info();
-    ESP_LOGI(TAG, "SUCCESS: Initialized screen buffers.");
-
-    ESP_LOGI(TAG, "Passing buffer info to mqtt...");
-    pass_buffer_info(&info);
-    ESP_LOGI(TAG, "SUCCESS: Passed buffer info to mqtt...");
+    // Creates the shared static mutex
+    display_init();
 
     // Rendering on background thread
     xTaskCreatePinnedToCore(
         display_task,      
         "display_task",   
         4096,              
-        info,              
+        NULL,              
         5,                 // Highest priority
         NULL,              
         1                  // 1st core

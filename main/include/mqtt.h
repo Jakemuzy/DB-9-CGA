@@ -35,9 +35,10 @@
 
 void* initialize_mqtt_client(void* args);
 void destroy_mqtt_client(esp_mqtt_client_handle_t client);
-void pass_buffer_info(BufferInfo** info);
 
 void mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_t event_id, void* event_data);
+void mqtt_reassamble_packet(void* event_data);
+void mqtt_dispatch_event(void);
 
 void receive_blob(void* blob, int len);
 void receive_config(void* conf, int len);

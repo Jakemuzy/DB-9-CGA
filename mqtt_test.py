@@ -63,7 +63,7 @@ def main():
     ap.add_argument("--port", type=int, default=1883)
     ap.add_argument("--width", type=int, default=320)
     ap.add_argument("--height", type=int, default=200)
-    ap.add_argument("--aspect-ratio", type=float, default=1.0,
+    ap.add_argument("--aspect-ratio", type=float, default=0.4,
                      help="Must match firmware's ASPECT_RATIO constant")
     ap.add_argument("--radius", type=int, default=40)
     args = ap.parse_args()
