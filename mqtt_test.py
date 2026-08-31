@@ -21,9 +21,10 @@ DB9_DARK, DB9_BRIGHT = 0x00, 0x08
 
 
 def pack_pixels(pixels):
-    """Pack a flat list of 4-bit color values into little-endian uint16 bytes,
-    matching how BufferInfo->draw_buf[idx] = pixel_color is stored on-device."""
-    return struct.pack(f"<{len(pixels)}H", *pixels)
+    """Pack a flat list of 4-bit color values into single bytes,
+    matching how BufferInfo->draw_buf[idx] = pixel_color is stored on-device
+    (data_width=8, 1 byte per pixel)."""
+    return struct.pack(f"<{len(pixels)}B", *pixels)
 
 
 def draw_circle(width, height, posx, posy, radius, color, brightness, aspect_ratio):
@@ -52,9 +53,9 @@ def on_publish(client, userdata, mid, reason_code=None, properties=None):
 
 
 def make_test_blob(width, height):
-    """Fake RGB565 frame: solid color, 2 bytes per pixel."""
-    pixel = (0x1F << 11)  # solid red in RGB565
-    return (pixel.to_bytes(2, "little")) * (width * height)
+    """Solid test frame: 1 byte per pixel, matching data_width=8."""
+    pixel = DB9_RED | DB9_BRIGHT
+    return bytes([pixel]) * (width * height)
 
 
 def main():

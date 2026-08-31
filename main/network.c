@@ -45,6 +45,7 @@ void initialize_network_stack()
 
     // Start 
     ESP_ERROR_CHECK(esp_wifi_start());
+    esp_wifi_set_ps(WIFI_PS_NONE); 
 }
 
 void initialize_network_events(NetworkCallback* _callbacks, uint16_t _num_callbacks)

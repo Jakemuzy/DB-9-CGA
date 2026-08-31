@@ -21,17 +21,15 @@
 
 #include "config.h"
 
-#define PORT_MAX_DELAY_TICKS 100
-#define DISPLAY_DELAY_MS 300
+#define DISPLAY_DELAY_MS 25
 				
 
 /* ----- Struct ----- */
 
-typedef struct BufferInfo { // TODO: Shared resource, should handle
+typedef struct BufferInfo { 
     esp_lcd_panel_handle_t handle;
 
-    uint16_t *fb1, *fb2;
-    uint16_t *draw_buf;  	
+    uint8_t *fb1, *fb2;
 			 
     uint16_t screen_width;
     uint16_t screen_height;
@@ -43,7 +41,7 @@ typedef struct BufferInfo { // TODO: Shared resource, should handle
 
 BufferInfo* initialize_buffer_info(void);
 
-void update_buffer(uint16_t* blob);
+void update_buffer(uint8_t* blob);
 void swap_buffers(void);
 
 // Starts rendering loop

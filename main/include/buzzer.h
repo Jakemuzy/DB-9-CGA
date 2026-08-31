@@ -9,6 +9,10 @@
      notification levels
 */
 
+#include "config.h"
+
+/* ----- Structs & Enums ----- */
+
 typedef struct Notification {
      unsigned int frequency;
      unsigned int duration_ms;
@@ -23,5 +27,12 @@ typedef enum {
 } NotificationLevel;
 
 extern const Notification NOTIFICATION_LEVELS[NOTIFY_COUNT];
+
+
+/* ----- Functions ----- */
+
+
+void start_buzzer(NotificationLevel notification_level);
+void stop_buzzer();
  
 #endif

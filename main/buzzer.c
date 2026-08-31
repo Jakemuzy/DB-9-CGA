@@ -6,3 +6,10 @@ const Notification NOTIFICATION_LEVELS[NOTIFY_COUNT] = {
     [NOTIFY_WARNING]  = { .frequency = 800,  .duration_ms = 300 },
     [NOTIFY_CRITICAL] = { .frequency = 3500, .duration_ms = 100 }
 };
+
+void start_buzzer(NotificationLevel notification_level)
+{
+
+}
+
+void stop_buzzer();

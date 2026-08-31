@@ -1,8 +1,10 @@
 #include "display.h"
 
 static const char* TAG = "DB9 (display)";
+
 static BufferInfo* buffer_info = NULL;
 static SemaphoreHandle_t display_mutex = NULL;
+static volatile bool frame_changed = false;
 
 BufferInfo* initialize_buffer_info() 
 {
@@ -15,33 +17,25 @@ BufferInfo* initialize_buffer_info()
     // Define a single configuration for the entire RGB panel
     ESP_LOGI(TAG, "Initializing LCD RGB Panel Object...");
     esp_lcd_rgb_panel_config_t panel_cfg = {
-        .clk_src = LCD_CLK_SRC_DEFAULT,
+        .clk_src = LCD_CLK_SRC_PLL160M, //LCD_CLK_SRC_DEFAULT,
         .pclk_gpio_num = PCLK_PIN, 
         .vsync_gpio_num = V_SYNC_PIN,         
         .hsync_gpio_num = H_SYNC_PIN,         
         .de_gpio_num = -1,                // CGA doesn't use Data Enable 
-        .bounce_buffer_size_px = 10 * config_get_screen_width(),
-        .data_width = 16,                 
-        .in_color_format = LCD_COLOR_FMT_RGB565,
+        .bounce_buffer_size_px = 20 * config_get_screen_width(),
+        .data_width = 8,                 
+        .in_color_format = LCD_COLOR_FMT_GRAY8, // Not actually grayscale, just 8 bit which is perfect for our data
         .data_gpio_nums = {
             RED_PIN,        
             GREEN_PIN,      
             BLUE_PIN,       
             INTENSITY_PIN,
 
-	    // Unused dummies since requires 16 bit width
+	        // Unused dummies since requires 8 bit width
             DUMMY_A, 
             DUMMY_B, 
             DUMMY_C,
             DUMMY_D,
-            DUMMY_E,
-            DUMMY_F,
-            DUMMY_G,
-            DUMMY_H,
-            DUMMY_I,
-            DUMMY_J,
-            DUMMY_K,
-            DUMMY_L
         },
 
         // Porch values straight from IBM hardware documentaiton for CGA, what a weird standard
@@ -62,64 +56,66 @@ BufferInfo* initialize_buffer_info()
             },
         },
         .flags = {
-            .fb_in_psram = true,      
+            .fb_in_psram = false,      
 	        .disp_active_low = 1,
-            .double_fb = 1
+            .double_fb = 0
         },
     };
 
     ESP_ERROR_CHECK(
-	esp_lcd_new_rgb_panel(
-	    &panel_cfg, 
-	    &info->handle
-	)
+        esp_lcd_new_rgb_panel(
+            &panel_cfg, 
+            &info->handle
+        )
     );
 
     ESP_ERROR_CHECK(esp_lcd_panel_reset(info->handle));
     ESP_ERROR_CHECK(esp_lcd_panel_init(info->handle));
     
     ESP_ERROR_CHECK(
-	esp_lcd_rgb_panel_get_frame_buffer(
-	    info->handle, 
-	    2, 
-	    (void**)&info->fb1, 
-	    (void**)&info->fb2
-	)
+        esp_lcd_rgb_panel_get_frame_buffer(
+            info->handle, 
+            1, 
+            (void**)&info->fb1
+        )
     );
-    info->draw_buf = info->fb1;
+
+    // Write the second buffer in psram because not enough ram for both
+    /* info->fb2 = heap_caps_malloc(config_get_screen_height() * config_get_screen_width(), MALLOC_CAP_SPIRAM); 
+    if (info->fb2 == NULL) {
+        ESP_LOGE(TAG, "CRITICAL ERROR: Failed to allocate manual back buffer in PSRAM!");
+        return NULL;
+    }
+        */
 
     ESP_LOGI(TAG, "SUCCESS: Created buffer object.");
     return info;
 }
 
-void update_buffer(uint16_t* blob)
+void update_buffer(uint8_t* blob)
 {
-    uint16_t* back_buffer = (buffer_info->fb1 == buffer_info->draw_buf) ? buffer_info->fb2 : buffer_info->fb1;
-
+    // Always writes to the back buffer (in PSRAM)
     memcpy(
-        back_buffer, 
+        buffer_info->fb1, 
         blob, 
-        buffer_info->screen_width * buffer_info->screen_height * sizeof(uint16_t)
+        buffer_info->screen_width * buffer_info->screen_height 
     );
+
+    frame_changed = true;
 }
 
 void swap_buffers()
 {
-    esp_lcd_panel_draw_bitmap(
-        buffer_info->handle, 
-        0, 0, 
-        buffer_info->screen_width, 
-        buffer_info->screen_height, 
-        buffer_info->draw_buf
+    if (!frame_changed) return;
+    frame_changed = false;
+    
+
+    memcpy(
+        buffer_info->fb1, 
+        buffer_info->fb2, 
+        buffer_info->screen_width * buffer_info->screen_height
     );
 
-    buffer_info->draw_buf = (buffer_info->draw_buf == (uint16_t*)buffer_info->fb1) ? 
-                            (uint16_t*)buffer_info->fb2 : 
-                            (uint16_t*)buffer_info->fb1;
-
-    // If front and back buffer differ, copy the front into the back upon switch
-    if (buffer_info->fb1 != buffer_info->fb2)
-        buffer_info->fb2 = buffer_info->fb1;
 }
 
 
@@ -136,10 +132,12 @@ void display_task(void* pvParamaters)
     buffer_info = initialize_buffer_info();
 
     while (1) {
-        xSemaphoreTake(display_mutex, PORT_MAX_DELAY_TICKS);
+        /*
+        xSemaphoreTake(display_mutex, portMAX_DELAY);
         swap_buffers();
         xSemaphoreGive(display_mutex);
-        vTaskDelay(pdMS_TO_TICKS(DISPLAY_DELAY_MS));
+        */
+        vTaskDelay(pdMS_TO_TICKS(DISPLAY_DELAY_MS));   
     }
 }
 
@@ -150,15 +148,14 @@ void display_receive_blob(void* blob, int len)
         return;
     }
     size_t expected = (size_t)buffer_info->screen_width
-                     * (size_t)buffer_info->screen_height
-                     * sizeof(uint16_t);
+                     * (size_t)buffer_info->screen_height;
  
     if ((size_t)len != expected) {
         ESP_LOGW(TAG, "Blob size mismatch: got %d bytes, expected %zu", len, expected);
         return;
     }
 
-    xSemaphoreTake(display_mutex, PORT_MAX_DELAY_TICKS);
-    update_buffer((uint16_t*)blob);
+    xSemaphoreTake(display_mutex, portMAX_DELAY);
+    update_buffer((uint8_t*)blob);
     xSemaphoreGive(display_mutex);
 }
