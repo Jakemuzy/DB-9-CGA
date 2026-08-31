@@ -1,0 +1,17 @@
+dependencies:
+  espressif/mqtt:
+    dependencies: []
+    source:
+      path: components/espressif__mqtt
+      type: local
+    version: 1.0.0
+  idf:
+    source:
+      type: idf
+    version: 6.0.1
+direct_dependencies:
+- espressif/mqtt
+- idf
+manifest_hash: 655b4b9c2628acb4312f31168c767ff95b0de2a97012399b8c84933b30cc83bd
+target: esp32s3
+version: 3.0.0
