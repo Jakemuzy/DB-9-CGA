@@ -9,7 +9,16 @@
      notification levels
 */
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+#include "esp_log.h"
+#include "driver/ledc.h"
+
 #include "config.h"
+
+#define BUZZER_CHANNEL LEDC_CHANNEL_0
+#define BUZZER_TIMER   LEDC_TIMER_0
 
 /* ----- Structs & Enums ----- */
 
@@ -31,7 +40,9 @@ extern const Notification NOTIFICATION_LEVELS[NOTIFY_COUNT];
 
 /* ----- Functions ----- */
 
+void initialize_buzzer();
 
+void play_tone_buzzer_async(NotificationLevel notification_level);
 void start_buzzer(NotificationLevel notification_level);
 void stop_buzzer();
  

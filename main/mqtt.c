@@ -27,7 +27,7 @@ void* initialize_mqtt_client(void* args) // Args ignored for now (required to be
 
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
 
-    // Starts the background daemon thread automatically
+    // Starts the background thread automatically
     esp_err_t err = esp_mqtt_client_start(client);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to start MQTT loop engine client thread, err=%d", err);
@@ -63,6 +63,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             esp_mqtt_client_subscribe(client, TOPIC_CONFIG, 1);
             esp_mqtt_client_subscribe(client, TOPIC_SLEEP, 1);
             esp_mqtt_client_subscribe(client, TOPIC_WAKE, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_BUZZER, 1);
             break;
 
         case MQTT_EVENT_DISCONNECTED:
@@ -101,6 +102,7 @@ void mqtt_reassamble_packet(void* event_data)
         rx_topic[rx_topic_len] = '\0';
 
         if (rx_buffer_len > 0) {
+            // Allocate to SPRAM if above a certain size, otherwise SRAM is fine
             rx_buffer = heap_caps_malloc(rx_buffer_len, MALLOC_CAP_SPIRAM);
             if (rx_buffer == NULL) {
                 ESP_LOGE(TAG, "Failed to allocate %d bytes for incoming message", rx_buffer_len);
@@ -147,6 +149,9 @@ void mqtt_dispatch_event(void)
     else if (strncmp(rx_topic, TOPIC_WAKE, rx_topic_len) == 0) {
         receive_wake();
     }
+    else if (strncmp(rx_topic, TOPIC_BUZZER, rx_topic_len) == 0) {
+        receive_buzzer((char*)rx_buffer, rx_buffer_len);   // Might need to accept len
+    }
     else {
         ESP_LOGW(TAG, "Unhandled topic update received: %.*s", rx_topic_len, rx_topic);
     }
@@ -176,4 +181,19 @@ void receive_sleep(void)
 void receive_wake(void)
 {
     ESP_LOGI(TAG, "Command received: Waking...");
+}
+
+void receive_buzzer(char* notification_level, int len)
+{
+    ESP_LOGI(TAG, "Command received: Buzzer...");
+
+    NotificationLevel level;
+    if (len == sizeof("NOTIFY_INFO") - 1 && strncmp(notification_level, "NOTIFY_INFO", len) == 0) { level = NOTIFY_INFO; }
+    else if (len == sizeof("NOTIFY_ALERT") - 1 && strncmp(notification_level, "NOTIFY_ALERT", len) == 0) { level = NOTIFY_ALERT; }
+    else if (len == sizeof("NOTIFY_WARNING") - 1 && strncmp(notification_level, "NOTIFY_WARNING", len) == 0) { level = NOTIFY_WARNING; }
+    else if (len == sizeof("NOTIFY_CRITICAL") - 1 && strncmp(notification_level, "NOTIFY_CRITICAL", len) == 0) { level = NOTIFY_CRITICAL; }
+    else { level = NOTIFY_INFO; }
+
+    ESP_LOGI(TAG, "NOTIF LEVEL: %.*s", len, notification_level);
+    play_tone_buzzer_async(level);
 }

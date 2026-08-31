@@ -33,6 +33,7 @@
 #include "network.h"
 #include "mqtt.h"
 #include "display.h"
+#include "buzzer.h"
 
 
 static const char* TAG = "DB9 (main)";
@@ -55,6 +56,8 @@ void app_main()
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 
+    // Starts the buzzer
+    initialize_buzzer();
 
     // Creates the shared static mutex
     display_init();

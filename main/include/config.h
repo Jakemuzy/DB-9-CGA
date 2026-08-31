@@ -12,6 +12,8 @@
 
 */
 
+#include "driver/gpio.h"
+
 // DB9 pins
 #define RED_PIN          GPIO_NUM_42
 #define GREEN_PIN        GPIO_NUM_41
@@ -28,8 +30,8 @@
 #define DUMMY_D      GPIO_NUM_12
 
 // Buzzer and power pins
-#define POWER_PIN   GPIO_NUM_2
-#define BUZZER_PIN  GPIO_NUM_20
+#define POWER_PIN   GPIO_NUM_1
+#define BUZZER_PIN  GPIO_NUM_2
 
 /* ----- Setters & Getters ----- */
 

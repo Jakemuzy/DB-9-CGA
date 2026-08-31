@@ -29,6 +29,8 @@ This also allows us to wake the monitor wirelessly since the esp just needs to s
 3. You must activate these settings in idf.py menuconfig
     - Component config ---> ESP PSRAM ---> Support for external PSRAM
         - Set Mode (QUAD/OCT) to 'Octal'
+    - SPI RAM Config ---> RAM Clock Speed 
+        - Set to 80MHz the default 40 will cause a zebra stripe pattern
     - Please note only ESP-S3 will work with the lcd rgb library due to the specialized DMA and the 16mb of psram
 
 

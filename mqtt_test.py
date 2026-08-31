@@ -13,6 +13,7 @@ TOPIC_BLOB = "/db9/blob"
 TOPIC_CONFIG = "/db9/config"
 TOPIC_SLEEP = "/db9/sleep"
 TOPIC_WAKE = "/db9/wake"
+TOPIC_BUZZER = "/db9/buzzer"
 
 # Mirrors the Color/Brightness enum in the firmware.
 DB9_BLACK, DB9_RED, DB9_GREEN, DB9_YELLOW = 0x00, 0x01, 0x02, 0x03
@@ -77,7 +78,7 @@ def main():
     client.loop_start()
     time.sleep(1)  # let CONNACK complete
 
-    print("\nCommands: [b]lob (solid), [d]raw circle, [c]onfig, [s]leep, [w]ake, [q]uit")
+    print("\nCommands: [b]lob (solid), [d]raw circle, [n]otification, [c]onfig, [s]leep, [w]ake, [q]uit")
     while True:
         cmd = input("> ").strip().lower()
         if cmd == "b":
@@ -95,6 +96,25 @@ def main():
             client.publish(TOPIC_BLOB, blob, qos=1)
             lit = sum(1 for p in pixels if p != DB9_BLACK)
             print(f"Sent circle frame: {len(blob)} bytes, {lit} lit pixels")
+        elif cmd == "n":
+            print("\n\tNotification Levels: [1] Info, [2] Alert, [3] Warning, [4] Critical")
+            level_choice = input("\tChoose level (1-4): ").strip()
+
+            if level_choice == "1":
+                payload = b"NOTIFY_INFO"
+            elif level_choice == "2":
+                payload = b"NOTIFY_ALERT"
+            elif level_choice == "3":
+                payload = b"NOTIFY_WARNING"
+            elif level_choice == "4":
+                payload = b"NOTIFY_CRITICAL"
+            else:
+                print("\tInvalid choice, defaulting to INFO")
+                payload = b"NOTIFY_INFO"
+
+            # Publish the exact byte string token down the wire
+            client.publish(TOPIC_BUZZER, payload, qos=1)
+            print(f"\tSent {payload.decode()} payload to buzzer topic")
         elif cmd == "c":
             client.publish(TOPIC_CONFIG, b'{"width":320,"height":200}', qos=1)
         elif cmd == "s":
