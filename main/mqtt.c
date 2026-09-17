@@ -61,8 +61,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             ESP_LOGI(TAG, "MQTT connected. Subscribing to topics...");
             esp_mqtt_client_subscribe(client, TOPIC_BLOB, 1);
             esp_mqtt_client_subscribe(client, TOPIC_CONFIG, 1);
-            esp_mqtt_client_subscribe(client, TOPIC_SLEEP, 1);
-            esp_mqtt_client_subscribe(client, TOPIC_WAKE, 1);
+            esp_mqtt_client_subscribe(client, TOPIC_POWER, 1);
             esp_mqtt_client_subscribe(client, TOPIC_BUZZER, 1);
             break;
 
@@ -143,11 +142,8 @@ void mqtt_dispatch_event(void)
     else if (strncmp(rx_topic, TOPIC_CONFIG, rx_topic_len) == 0) {
         receive_config(rx_buffer, rx_buffer_len);
     }
-    else if (strncmp(rx_topic, TOPIC_SLEEP, rx_topic_len) == 0) {
-        receive_sleep();
-    }
-    else if (strncmp(rx_topic, TOPIC_WAKE, rx_topic_len) == 0) {
-        receive_wake();
+    else if (strncmp(rx_topic, TOPIC_POWER, rx_topic_len) == 0) {
+        receive_power();
     }
     else if (strncmp(rx_topic, TOPIC_BUZZER, rx_topic_len) == 0) {
         receive_buzzer((char*)rx_buffer, rx_buffer_len);   // Might need to accept len
@@ -173,14 +169,12 @@ void receive_config(void* conf, int len)
     ESP_LOGI(TAG, "Parsing text geometry structural mutations configurations...");
 }
 
-void receive_sleep(void)
+void receive_power(void)
 {
-    ESP_LOGI(TAG, "Command received: Sleeping...");
-}
-
-void receive_wake(void)
-{
-    ESP_LOGI(TAG, "Command received: Waking...");
+    ESP_LOGI(TAG, "Command received: Power...");
+    gpio_set_level(POWER_PIN, 1);
+    vTaskDelay(pdMS_TO_TICKS(500));     // TODO: This delay waiting messes with the CRT display
+    gpio_set_level(POWER_PIN, 0);
 }
 
 void receive_buzzer(char* notification_level, int len)

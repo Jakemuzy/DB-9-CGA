@@ -30,7 +30,7 @@
 #define DUMMY_D      GPIO_NUM_12
 
 // Buzzer and power pins
-#define POWER_PIN   GPIO_NUM_1
+#define POWER_PIN   GPIO_NUM_21
 #define BUZZER_PIN  GPIO_NUM_2
 
 /* ----- Setters & Getters ----- */

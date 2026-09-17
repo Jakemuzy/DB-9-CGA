@@ -28,8 +28,7 @@
 
 #define TOPIC_BLOB "/db9/blob"
 #define TOPIC_CONFIG "/db9/config"
-#define TOPIC_SLEEP "/db9/sleep"
-#define TOPIC_WAKE "/db9/wake"
+#define TOPIC_POWER "/db9/power"
 #define TOPIC_BUZZER "/db9/buzzer"
 
 
@@ -44,8 +43,7 @@ void mqtt_dispatch_event(void);
 
 void receive_blob(void* blob, int len);
 void receive_config(void* conf, int len);
-void receive_sleep(void);
-void receive_wake(void);
+void receive_power(void);
 void receive_buzzer(char* notification_level, int len);
 
 #endif 
