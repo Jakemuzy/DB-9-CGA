@@ -46,7 +46,7 @@ def draw_circle(width, height, posx, posy, radius, color, brightness, aspect_rat
 
 
 def on_connect(client, userdata, flags, reason_code, properties=None):
-    print(f"Connected to broker (reason_code={reason_code})")
+    p_handle_qos1_message_flowrint(f"Connected to broker (reason_code={reason_code})")
 
 
 def on_publish(client, userdata, mid, reason_code=None, properties=None):

@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
 Standalone MQTT broker for testing the DB9 firmware.
-Requires: pip install amqtt
-
-Listens on 0.0.0.0:1883 so the ESP32 (on your LAN) can connect to it
-using your machine's LAN IP, e.g. mqtt://192.168.68.102:1883
+Should not be used for production, only for testing
 """
 import asyncio
 import logging
