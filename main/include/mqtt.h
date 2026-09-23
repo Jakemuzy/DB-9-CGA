@@ -23,7 +23,7 @@
 #include "buzzer.h"
 
 // These could potentially be in config
-#define ADDRESS "mqtt://192.168.68.102"
+#define ADDRESS "mqtt://192.168.68.63"
 #define CLIENTID "DB9Client"
 
 #define TOPIC_BLOB "/db9/blob"
@@ -40,6 +40,8 @@ void destroy_mqtt_client(esp_mqtt_client_handle_t client);
 void mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_t event_id, void* event_data);
 void mqtt_reassamble_packet(void* event_data);
 void mqtt_dispatch_event(void);
+
+void power_off_callback(TimerHandle_t xTimer);
 
 void receive_blob(void* blob, int len);
 void receive_config(void* conf, int len);

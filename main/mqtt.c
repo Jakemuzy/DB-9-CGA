@@ -157,6 +157,15 @@ void mqtt_dispatch_event(void)
 
 
 
+void power_off_callback(TimerHandle_t xTimer)
+{
+    gpio_set_level(POWER_PIN, 0);
+    ESP_LOGI(TAG, "Power pulse copmlete (LOW)");
+}
+
+
+
+
 
 void receive_blob(void* blob, int len)
 {
@@ -171,10 +180,22 @@ void receive_config(void* conf, int len)
 
 void receive_power(void)
 {
-    ESP_LOGI(TAG, "Command received: Power...");
+    ESP_LOGI(TAG, "Command received: Power pulse started (HIGH)");
     gpio_set_level(POWER_PIN, 1);
-    vTaskDelay(pdMS_TO_TICKS(500));     // TODO: This delay waiting messes with the CRT display
-    gpio_set_level(POWER_PIN, 0);
+
+    TimerHandle_t xPowerTimer = xTimerCreate(
+        "PowerTimer",               
+        pdMS_TO_TICKS(500),         
+        pdFALSE,                 
+        (void *) 0,                 
+        power_off_callback          
+    );
+
+    if (xPowerTimer != NULL) {
+        xTimerStart(xPowerTimer, 0); 
+    } else {
+        gpio_set_level(POWER_PIN, 0); 
+    }
 }
 
 void receive_buzzer(char* notification_level, int len)
